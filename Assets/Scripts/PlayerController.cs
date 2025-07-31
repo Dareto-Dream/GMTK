@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     //idk how to call it but okay, vars
     private PlayerInput playerInput;
 
-    //bools 
+
+    //bools
     private bool is_sprinting = false;
 
     //constants
@@ -38,6 +39,11 @@ public class PlayerMovement : MonoBehaviour
         _Movement = value.Get<Vector2>();
     }
 
+    private void OnInteract(InputValue value)
+    {
+        Debug.Log("Interactiong with surrounded objects. . .");
+    }
+
     private void OnSprintStart()
     {
         is_sprinting = true;
@@ -47,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
     {
         is_sprinting = false;
     }
+
+
 
     private void FixedUpdate()
     {
