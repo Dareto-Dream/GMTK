@@ -54,6 +54,20 @@ public class PlayerMovement : MonoBehaviour
         is_sprinting = false;
     }
 
+    private void InteractWithNearby()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1.5f);
+        foreach (var hit in hits)
+        {
+            var interactable = hit.GetComponent<IInteractable>();
+            if (interactable != null)
+            {
+                interactable.Interact();
+                break;
+            }
+        }
+    }
+
 
 
     private void FixedUpdate()
