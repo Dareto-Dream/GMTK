@@ -1,46 +1,43 @@
 # Kill Switch
 ## 2025 GMTK Game Jam | Theme: LOOP
 
-**Kill Switch** is a top-down psychological stealth-assassin game built in 48 hours for the GMTK 2025 Game Jam.  
-You’re a professional sniper with access to a mysterious “reset button” that rewinds time every time you fail.  
-But the loop isn’t kind every failure warps reality, shifting intel, changing guard patterns, and pushing you closer  
-to a truth you can’t escape. Eventually, you abandon the rifle for a close-quarters assassination…  
-only to discover that your final target is **yourself**the first version of you who failed the mission.  
-
-> _“Every shot, every reset, every step closer to the inevitable.”_
+Kill Switch is a psychological top-down stealth-assassin game built in 48 hours for the GMTK 2025 Game Jam.  
+You’re a sniper with the power to reset time after every failure. Each attempt brings you closer to uncovering  
+your true target and the dark truth of the loop you’re trapped in.
 
 ---
 
 ### Gameplay
-- **Top-down tilemap stealth** with sniper and melee systems  
-- **Loop mechanic:** forced resets that subtly change each run  
-- **Persistent world:** past mistakes leave behind echoes of your failures  
-- **Psychological twist ending:** the assassin becomes their own target  
+- **Top-down tilemap stealth** with both ranged and close-quarters combat
+- **Reset mechanic:** every failed assassination rewinds time with subtle world changes
+- **Six looping attempts:** tension builds with each failure as the timeline degrades
+- **Final twist:** switching to a pistol or knife leads to a personal confrontation with your past self
+- **Bittersweet ending:** whether you kill or spare your target, the loop closes violently
 
 ---
 
-### Contributors
-**Programmers:**  
+### Team
+**Programming:**  
 - DeltaVortex (DeltaVDevs)  
 - Master's Time  
 
-**Artists:**  
+**Art:**  
 - Turtle Dev  
 - Incoder Ancoder  
 
-**Sound and SFX:**  
+**Sound & SFX:**  
 - Pythagoras  
 
 ---
 
-### Tech Stack
-- Unity (Tilemap + URP)  
-- C#  
-- GitHub for version control  
+### Tech
+- Unity (2D URP + Tilemap)
+- C# scripting
+- GitHub for version control
 
 ---
 
 ### Development Notes
-- Built rapidly during GMTK 2025  
-- Expect bugs, chaos, and narrative trauma  
-- First jam as a team, warmup for bigger projects ahead  
+- Designed and built during GMTK 2025  
+- Story-driven, minimalist assets  
+- Our first jam as a team, warm-up for bigger projects  
