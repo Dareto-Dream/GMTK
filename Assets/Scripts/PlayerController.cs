@@ -44,6 +44,16 @@ public class PlayerController : MonoBehaviour
         is_freezing = false;
     }
 
+    public void Hide()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;   
+    }
+
+    public void Unhide()
+    {
+        GetComponent<SpriteRenderer>().enabled = true;   
+    }
+
     public void ChangePosition(Vector3 pos)
     {
         transform.position = pos;

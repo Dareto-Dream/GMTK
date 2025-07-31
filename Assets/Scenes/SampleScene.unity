@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 9911906}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.92, y: -1.73, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14727,8 +14727,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb3619a359b036a89d55d535d233936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sniperRifle: {fileID: 0}
-  playerPos: {x: 0, y: 0, z: 0}
+  sniperRifle: {fileID: 1102223825, guid: 7a9fb400cf7835046995a00dd01056fb, type: 3}
+  playerPos: {x: -4.5, y: -5.6, z: -1}
+  mapController: {fileID: 0}
 --- !u!212 &1479914647
 SpriteRenderer:
   m_ObjectHideFlags: 0

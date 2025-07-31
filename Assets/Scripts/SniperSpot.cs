@@ -7,6 +7,8 @@ public class SniperSpot : MonoBehaviour, IInteractable
     [SerializeField] private Sprite sniperRifle;
     [SerializeField] private Vector3 playerPos;
 
+    public MapController mapController;
+
     private bool is_set_up = false;
 
     private PlayerController playerController;
@@ -27,10 +29,14 @@ public class SniperSpot : MonoBehaviour, IInteractable
 
         GetComponent<SpriteRenderer>().sprite = sniperRifle;
         Debug.Log("Sniper is set up, ready to shoot!");
+
+        yield return new WaitForSeconds(2f);
+        playerController.Hide();
+        mapController.ChangeMap(7);
     }
 
 
-    private void OggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
