@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     Vector2 _Movement;
     Rigidbody2D _Rigidbody;
@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     //bools
     private bool is_sprinting = false;
+    private bool is_freezing = false;
 
     //constants
     private float SPEED_MULTIPLIER = 5f;
@@ -33,6 +34,20 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    public void Freeze()
+    {
+        is_freezing = true;
+    }
+
+    public void Unfreeze()
+    {
+        is_freezing = false;
+    }
+
+    public void ChangePosition(Vector3 pos)
+    {
+        transform.position = pos;
+    }
 
     private void OnMove(InputValue value)
     {
@@ -42,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnInteract(InputValue value)
     {
         Debug.Log("Interactiong with surrounded objects. . .");
+        InteractWithNearby();
     }
 
     private void OnSprintStart()
@@ -72,6 +88,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (is_freezing)
+            return;
         _Rigidbody.linearVelocity = is_sprinting ? _Movement * SPRINTING_SPEED_MULTIPLIER : _Movement * SPEED_MULTIPLIER; // sprint or walk
     }
 }
