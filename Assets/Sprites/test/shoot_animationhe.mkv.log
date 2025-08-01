@@ -1,0 +1,21 @@
+/tmp/.mount_krita.SYjjLJ/usr/bin/ffmpeg -hide_banner -y -y -r 24 -start_number 0 -start_number_range 1 -i /home/digitalite/Unity Projects/KillSwitch/Assets/Sprites/frame%04d.png -c:v libopenh264 -b:v 5000k /home/digitalite/Unity Projects/KillSwitch/Assets/Sprites/test/shoot_animationhe.mkv
+=====================================================
+Input #0, image2, from '/home/digitalite/Unity Projects/KillSwitch/Assets/Sprites/frame%04d.png':
+  Duration: 00:00:00.20, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc), 500x500 [SAR 11811:11811 DAR 1:1], 25 fps, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libopenh264))
+Press [q] to stop, [?] for help
+[libopenh264 @ 0x626ca57fbb40] Slice count will be set automatically
+[libopenh264 @ 0x626ca57fbb40] [OpenH264] this = 0x0x626ca57fc6d0, Warning:SliceArgumentValidationFixedSliceMode(), unsupported setting with Resolution and uiSliceNum combination under RC on! So uiSliceNum is changed to 8!
+[libopenh264 @ 0x626ca57fbb40] [OpenH264] this = 0x0x626ca57fc6d0, Warning:bEnableFrameSkip = 0,bitrate can't be controlled for RC_QUALITY_MODE,RC_BITRATE_MODE and RC_TIMESTAMP_MODE without enabling skip frame.
+Output #0, matroska, to '/home/digitalite/Unity Projects/KillSwitch/Assets/Sprites/test/shoot_animationhe.mkv':
+  Metadata:
+    encoder         : Lavf58.76.100
+  Stream #0:0: Video: h264 (H264 / 0x34363248), yuv420p(tv, progressive), 500x500 [SAR 1:1 DAR 1:1], q=2-31, 5000 kb/s, 24 fps, 1k tbn
+    Metadata:
+      encoder         : Lavc58.134.100 libopenh264
+    Side data:
+      cpb: bitrate max/min/avg: 5000000/0/5000000 buffer size: 0 vbv_delay: N/A
+frame=    1 fps=0.0 q=-0.0 size=       1kB time=00:00:00.00 bitrate=4792.0kbits/s speed=0.653x    frame=    5 fps=0.0 q=-0.0 Lsize=      12kB time=00:00:00.16 bitrate= 572.7kbits/s speed=6.66x    
+video:11kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 5.965283%

@@ -1,0 +1,21 @@
+/tmp/.mount_krita.SYjjLJ/usr/bin/ffmpeg -hide_banner -y -y -r 40 -start_number 0 -start_number_range 1 -i /home/digitalite/Unity Projects/KillSwitch/Assets/Sprites/test/frame%04d.png -i /home/digitalite/Unity Projects/KillSwitch/Assets/Sprites/test/KritaTempPalettegen_%06d.png -lavfi [0:v][1:v]paletteuse=dither=sierra2_4a:diff_mode=none -f gif -loop 0 -gifflags +transdiff /home/digitalite/Unity Projects/KillSwitch/Assets/Sprites/test/shoot_animationhe.gif
+=====================================================
+Input #0, image2, from '/home/digitalite/Unity Projects/KillSwitch/Assets/Sprites/test/frame%04d.png':
+  Duration: 00:00:00.20, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc), 500x500 [SAR 11811:11811 DAR 1:1], 25 fps, 25 tbr, 25 tbn, 25 tbc
+Input #1, image2, from '/home/digitalite/Unity Projects/KillSwitch/Assets/Sprites/test/KritaTempPalettegen_%06d.png':
+  Duration: 00:00:00.04, start: 0.000000, bitrate: N/A
+  Stream #1:0: Video: png, rgba(pc), 16x16 [SAR 1:1 DAR 1:1], 25 fps, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 (png) -> paletteuse:default
+  Stream #1:0 (png) -> paletteuse:palette
+  paletteuse -> Stream #0:0 (gif)
+Press [q] to stop, [?] for help
+Output #0, gif, to '/home/digitalite/Unity Projects/KillSwitch/Assets/Sprites/test/shoot_animationhe.gif':
+  Metadata:
+    encoder         : Lavf58.76.100
+  Stream #0:0: Video: gif, pal8(pc, gbr/unknown/unknown, progressive), 500x500 [SAR 1:1 DAR 1:1], q=2-31, 200 kb/s, 40 fps, 100 tbn (default)
+    Metadata:
+      encoder         : Lavc58.134.100 gif
+frame=    1 fps=0.0 q=-0.0 size=       0kB time=00:00:00.01 bitrate=   0.0kbits/s speed=5.72x    frame=    5 fps=0.0 q=-0.0 Lsize=      72kB time=00:00:00.11 bitrate=5330.5kbits/s speed=2.47x    
+video:72kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.027295%
