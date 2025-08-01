@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour
 
     public void ChangePosition(Vector3 pos)
     {
+        if (pos.x == -999)
+            pos.x = transform.position.x;
         transform.position = pos;
     }
 

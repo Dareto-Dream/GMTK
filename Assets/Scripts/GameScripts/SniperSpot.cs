@@ -15,11 +15,17 @@ public class SniperSpot : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        Debug.Log("Test completed");
         if (!is_set_up)
         {
             playerController.ChangePosition(playerPos);
             playerController.Freeze();
             StartCoroutine(SetSniperRifle());
+        }
+        else
+        {
+            playerController.Hide();
+            mapController.ChangeMap(7);
         }
     }
 
@@ -29,10 +35,7 @@ public class SniperSpot : MonoBehaviour, IInteractable
 
         GetComponent<SpriteRenderer>().sprite = sniperRifle;
         Debug.Log("Sniper is set up, ready to shoot!");
-
-        yield return new WaitForSeconds(2f);
-        playerController.Hide();
-        mapController.ChangeMap(7);
+        is_set_up = true;
     }
 
 
