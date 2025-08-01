@@ -61,10 +61,9 @@ public class SniperHandler : MonoBehaviour
     {
         foreach (Sprite sprite in birdAnimation)
         {
-            yield return 0;
+            yield return new WaitForSeconds(0f);
             bird.GetComponent<UnityEngine.UI.Image>().sprite = sprite;
         }
-        yield return new WaitForSeconds(0.2f);
         StopSniping();
     }
 

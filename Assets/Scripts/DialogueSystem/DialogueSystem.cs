@@ -100,9 +100,6 @@ public class DialogueUI : MonoBehaviour
 
         if (is_typing)
         {
-            StopAllCoroutines();
-            dialogueText.text = lines[index].text;
-            is_typing = false;
             return;
         }
 
