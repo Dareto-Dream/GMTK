@@ -9,6 +9,8 @@ public class SniperSpot : MonoBehaviour, IInteractable
 
     public MapController mapController;
 
+
+    [SerializeField] private GameObject sniperRifleAim;
     private bool is_set_up = false;
 
     private PlayerController playerController;
@@ -26,6 +28,8 @@ public class SniperSpot : MonoBehaviour, IInteractable
         {
             playerController.Hide();
             mapController.ChangeMap(7);
+            sniperRifleAim.SetActive(true);
+            Camera.main.GetComponent<SniperHandler>().StartSniping();
         }
     }
 

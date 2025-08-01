@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     //bools
     private bool is_sprinting = false;
     private bool is_freezing = false;
+    private bool is_mouse_down = false;
 
     //constants
     private float SPEED_MULTIPLIER = 5f;
@@ -27,10 +28,12 @@ public class PlayerController : MonoBehaviour
         _Rigidbody = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
 
-
+        var mouseAction = playerInput.currentActionMap["Mouse"];
         var sprintAction = playerInput.currentActionMap["Sprint"];
         sprintAction.started += ctx => OnSprintStart();
         sprintAction.canceled += ctx => OnSprintStop();
+        mouseAction.started += ctx => OnMouseDown();
+        mouseAction.canceled += ctx => OnMouseUp();
     }
 
 
@@ -51,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
     public void Unhide()
     {
-        GetComponent<SpriteRenderer>().enabled = true;   
+        GetComponent<SpriteRenderer>().enabled = true;
     }
 
     public void ChangePosition(Vector3 pos)
@@ -64,6 +67,16 @@ public class PlayerController : MonoBehaviour
     private void OnMove(InputValue value)
     {
         _Movement = value.Get<Vector2>();
+    }
+
+    public Vector3 GetMovement()
+    {
+        return _Movement;
+    }
+
+    public bool GetMouseButton()
+    {
+        return is_mouse_down;
     }
 
     private void OnInteract(InputValue value)
@@ -82,6 +95,16 @@ public class PlayerController : MonoBehaviour
         is_sprinting = false;
     }
 
+    private void OnMouseDown()
+    {
+        is_mouse_down = true;
+    }
+
+    private void OnMouseUp()
+    {
+        is_mouse_down = false;
+    }
+
     private void InteractWithNearby()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1.5f);
@@ -95,7 +118,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
 
 
     private void FixedUpdate()
