@@ -54,6 +54,7 @@ public class SniperHandler : MonoBehaviour
         _Rigidbody.simulated = false;
 
         dialogueUI.StartDialogue(script);
+        Debug.LogWarning("Started dialogue!");
     }
 
     private IEnumerator ShootingMagic()

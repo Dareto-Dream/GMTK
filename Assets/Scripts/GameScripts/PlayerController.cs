@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
 
     private void InteractWithNearby()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1.5f);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1.05f);
         foreach (var hit in hits)
         {
             var interactable = hit.GetComponent<IInteractable>();

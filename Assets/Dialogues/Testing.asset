@@ -14,36 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueScript
   lines:
   - speakerName: Aiuan
-    text: 'Hello matafaka
+    text: 'Test1 '
+    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+  - speakerName: Sanness ...........................................................................
+    text: Test2
+    characterFace: {fileID: 8547179280450521768, guid: 4c56216d2823af1cabfdd79565450636, type: 3}
+  - speakerName: Badeline
+    text: 'Test3
 
-      Where''s my money?'
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
-  - speakerName: Matafaka
-    text: You INSULTED ME! THAT'S UNFORGIVABLE
-    characterFace: {fileID: 8547179280450521768, guid: 4c56216d2823af1cabfdd79565450636, type: 3}
-  - speakerName: Aiuan
-    text: But I called your name. And where's my money?
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
-  - speakerName: Matafaka
-    text: My money? Yeah, you will get it by KILLING ME
-    characterFace: {fileID: 8547179280450521768, guid: 4c56216d2823af1cabfdd79565450636, type: 3}
-  - speakerName: Aiuan
-    text: Then we will fight. Hyaaa!!!
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
-  - speakerName: Matafaka
-    text: '*Blocks* Hah! PATHETIC
+      .
 
-      HYEEEEH'
-    characterFace: {fileID: 8547179280450521768, guid: 4c56216d2823af1cabfdd79565450636, type: 3}
-  - speakerName: Aiuan
-    text: Hurghhhh.. HYAAA
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
-  - speakerName: Matafaka
-    text: Hua ha he hu! Hya!
-    characterFace: {fileID: 8547179280450521768, guid: 4c56216d2823af1cabfdd79565450636, type: 3}
-  - speakerName: Aiyan
-    text: Heee! Huh! Nyah, hemh, huah, hu, hie!
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
-  - speakerName: Me
-    text: Bruh... Why are you reading this Dialogue....
+      .
+
+      .
+
+      .
+
+      .
+
+      .
+
+      .
+
+      .
+
+      .
+
+      .
+
+      .'
     characterFace: {fileID: -923269068091526670, guid: e1de60e37e855ff1f8cd27c89b7d7a44, type: 3}

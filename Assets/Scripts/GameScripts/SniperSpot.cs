@@ -12,20 +12,21 @@ public class SniperSpot : MonoBehaviour, IInteractable
 
     [SerializeField] private GameObject sniperRifleAim;
     private bool is_set_up = false;
+    private bool is_done = false;
 
     private PlayerController playerController;
 
     public void Interact()
     {
-        Debug.Log("Test completed");
         if (!is_set_up)
         {
             playerController.ChangePosition(playerPos);
             playerController.Freeze();
             StartCoroutine(SetSniperRifle());
         }
-        else
+        else if(is_set_up && !is_done)
         {
+            is_done = true;
             playerController.Hide();
             mapController.ChangeMap(7);
             sniperRifleAim.SetActive(true);
