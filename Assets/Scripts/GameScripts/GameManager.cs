@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int loopCount = 1;
+    private int loopCount = 0;
 
     [SerializeField] private SniperHandler sniperHandler;
     [SerializeField] private PlayerController playerController;
@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
         sniperHandler.LoopReset();
         playerController.LoopReset();
         sniperSpot.LoopReset();
-        
 
         switch (loopCount)
         {
@@ -47,8 +46,7 @@ public class GameManager : MonoBehaviour
             // Second case: lost the ammo, and when returned everyone left the stage
             // Third case: Guards are waiting for him
             // Fourth case: He sets up a weapon in the wrong way and it explodes
-            // Fifth case: Guards stop him again
-            // Sixth case: He kills victim and dies, or victim kills him.
+            // Fifth case: He kills victim and dies, or victim kills him.
 
 
             case 1:
@@ -58,6 +56,7 @@ public class GameManager : MonoBehaviour
             case 2:
                 sniperHandler.is_loop_2 = true;
                 droppedItemSpawner.is_loop_2 = true;
+                sniperHandler.LoopReset();
                 mapController.ChangeMap(0);
                 break;
             case 3:
@@ -68,8 +67,6 @@ public class GameManager : MonoBehaviour
                 mapController.ChangeMap(0);
                 break;
             case 5:
-                break;
-            case 6:
                 break;
         }
     }

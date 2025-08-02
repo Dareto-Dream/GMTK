@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Loop2 no victim
   m_EditorClassIdentifier: Assembly-CSharp::DialogueScript
-  lines: []
+  lines:
+  - speakerName: Y O U
+    text: DAMNIT! They are not here!
+    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+  - speakerName: Y O U
+    text: I need to travel to past again. . .
+    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+  - speakerName: Y O U
+    text: Killswitch.
+    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}

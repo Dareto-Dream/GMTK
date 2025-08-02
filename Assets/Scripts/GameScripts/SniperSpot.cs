@@ -13,7 +13,7 @@ public class SniperSpot : MonoBehaviour, IInteractable
 
     [SerializeField] private GameObject sniperRifleAim;
     private bool is_set_up = false;
-    private bool is_done = false;
+    [HideInInspector]public bool is_done = false;
 
     private PlayerController playerController;
 
@@ -35,6 +35,7 @@ public class SniperSpot : MonoBehaviour, IInteractable
         }
         else if (is_set_up && !is_done)
         {
+            playerController.Freeze();
             is_done = true;
             playerController.Hide();
             mapController.ChangeMap(7);

@@ -12,19 +12,20 @@ public class PlayerController : MonoBehaviour
 
     //idk how to call it but okay, vars
     private PlayerInput playerInput;
-
+    private CharacterAnimationLogic characterAnimationLogic;
 
     //bools
     private bool is_sprinting = false;
     private bool is_freezing = false;
     private bool is_mouse_down = false;
+    private bool is_moving = false;
 
     public bool is_loop_5 = false;
     public bool is_loop_6 = false;
 
     //constants
-    private float SPEED_MULTIPLIER = 5f;
-    private float SPRINTING_SPEED_MULTIPLIER = 10f;
+    private float SPEED_MULTIPLIER = 5f; // Change to 4f
+    private float SPRINTING_SPEED_MULTIPLIER = 25f; //Change to 6f
 
     private void Awake()
     {
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
         sprintAction.canceled += ctx => OnSprintStop();
         mouseAction.started += ctx => OnMouseDown();
         mouseAction.canceled += ctx => OnMouseUp();
+
+        characterAnimationLogic = GetComponent<CharacterAnimationLogic>();
     }
 
     public void LoopReset()
@@ -142,5 +145,14 @@ public class PlayerController : MonoBehaviour
         if (is_freezing)
             return;
         _Rigidbody.linearVelocity = is_sprinting ? _Movement * SPRINTING_SPEED_MULTIPLIER : _Movement * SPEED_MULTIPLIER; // sprint or walk
+        if (_Movement.x != 0f || _Movement.y != 0f)
+        {
+            characterAnimationLogic.StartAnimation();
+        }
+        else
+        {
+            characterAnimationLogic.StopAnimation();
+        }
+
     }
 }

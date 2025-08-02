@@ -8537,9 +8537,10 @@ MonoBehaviour:
   - {fileID: -8398409672689469449, guid: 7afc2164ec25fbec48b36519a7065c1b, type: 3}
   emptySprite: {fileID: -7069967282533533396, guid: 989616163c34b954b9c7d5015f680a66, type: 3}
   scriptLoop1: {fileID: 11400000, guid: d753a799f4f9a8da3b844ab12e2d027a, type: 2}
-  scriptLoop2_1: {fileID: 0}
-  scriptLoop2_2: {fileID: 0}
+  scriptLoop2_1: {fileID: 11400000, guid: 9f829b20dd9ab81bdbf2495c7f5b1233, type: 2}
+  scriptLoop2_2: {fileID: 11400000, guid: 332cc0f30c9f22c9999f51fc1be4e4d6, type: 2}
   scriptLoop4: {fileID: 0}
+  shootingAttempts: 0
   is_loop_1: 0
   is_loop_2: 0
   is_loop_4: 0
@@ -15428,10 +15429,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1179081992}
   - component: {fileID: 1179081991}
-  - component: {fileID: 1179081990}
+  - component: {fileID: 1179081997}
   - component: {fileID: 1179081994}
   - component: {fileID: 1179081993}
   - component: {fileID: 1179081995}
+  - component: {fileID: 1179081996}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -15439,52 +15441,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1179081990
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1179081989}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!212 &1179081991
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15529,7 +15485,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 7388399842426930641, guid: d152d905378d9f60790fea6f9fdcd4c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15627,6 +15583,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_loop_5: 0
   is_loop_6: 0
+--- !u!114 &1179081996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179081989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e5b04a568898dff86322e625c97bec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterSprites:
+  - {fileID: 7388399842426930641, guid: d152d905378d9f60790fea6f9fdcd4c8, type: 3}
+  - {fileID: 2036792201, guid: d152d905378d9f60790fea6f9fdcd4c8, type: 3}
+  - {fileID: -1052856603, guid: d152d905378d9f60790fea6f9fdcd4c8, type: 3}
+--- !u!58 &1179081997
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179081989}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1 &1184704989
 GameObject:
   m_ObjectHideFlags: 0
@@ -18149,7 +18157,7 @@ GameObject:
   - component: {fileID: 1479914646}
   m_Layer: 0
   m_Name: Sniper Spot
-  m_TagString: Untagged
+  m_TagString: SniperSpot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18186,6 +18194,7 @@ MonoBehaviour:
   squareSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   mapController: {fileID: 2011812991}
   sniperRifleAim: {fileID: 1428422889}
+  is_done: 0
 --- !u!212 &1479914647
 SpriteRenderer:
   m_ObjectHideFlags: 0

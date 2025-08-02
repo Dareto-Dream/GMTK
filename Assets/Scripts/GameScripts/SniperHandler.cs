@@ -10,6 +10,7 @@ public class SniperHandler : MonoBehaviour
 
     private bool is_sniping = false;
     private bool is_shooting = false;
+    private bool try_to_find_object = false;
 
     private Vector3 _Movement;
     private Rigidbody2D _Rigidbody;
@@ -29,13 +30,18 @@ public class SniperHandler : MonoBehaviour
 
     private float SPEED_MULTIPLIER = 5f;
 
-    private int shootingAttempts = 0;
+    [HideInInspector] public int shootingAttempts = 0;
     private int shootingAttemptsMax = 3;
 
     [HideInInspector] public bool is_loop_1 = false;
     [HideInInspector] public bool is_loop_2 = false;
     [HideInInspector] public bool is_loop_4 = false;
     [HideInInspector] public bool is_able_to_shoot = true;
+
+    public void ResetIsDone()
+    {
+        try_to_find_object = true;
+    }
 
     public void LoopReset()
     {
@@ -44,7 +50,8 @@ public class SniperHandler : MonoBehaviour
         is_loop_4 = false;
         is_shooting = false;
         is_sniping = false;
-        is_able_to_shoot = true;
+        if (is_loop_2) is_able_to_shoot = false;
+        try_to_find_object = false;
         bird.GetComponent<UnityEngine.UI.Image>().sprite = emptySprite;
     }
 
@@ -62,7 +69,7 @@ public class SniperHandler : MonoBehaviour
 
     public void StartSniping()
     {
-        if (is_loop_2) is_able_to_shoot = false;
+
         _Rigidbody.simulated = true;
         is_sniping = true;
     }
@@ -83,7 +90,12 @@ public class SniperHandler : MonoBehaviour
         }
         else if (is_loop_2)
         {
-            dialogueUI.StartDialogue(scriptLoop2_1);
+            if (!is_able_to_shoot)
+                dialogueUI.StartDialogue(scriptLoop2_1);
+            else
+            {
+                dialogueUI.StartDialogue(scriptLoop2_2, GameManager.Instance.EndLoop);
+            }
         }
         else if (is_loop_4)
         {
@@ -106,8 +118,16 @@ public class SniperHandler : MonoBehaviour
         }
         else if (is_loop_2)
         {
-            yield return new WaitForSeconds(2f);
-            StopSniping();
+            if (!is_able_to_shoot)
+            {
+                StopSniping();
+            }
+            else
+            {
+                yield return new WaitForSeconds(2f);
+                StopSniping();
+            }
+            
         }
         else if (is_loop_4)
         {
@@ -117,15 +137,25 @@ public class SniperHandler : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (try_to_find_object)
+        {
+            if (GameObject.FindGameObjectWithTag("SniperSpot") != null)
+            {
+                GameObject.FindGameObjectWithTag("SniperSpot").GetComponent<SniperSpot>().is_done = false;
+                try_to_find_object = false;
+                is_shooting = false;
+            }
+        }
         if (!is_sniping) return;
         _Movement = playerController.GetMovement();
         _Rigidbody.linearVelocity = _Movement * SPEED_MULTIPLIER; // sprint or walk
         if (playerController.GetMouseButton() && !is_shooting)
         {
+            Debug.Log("Pressed LMB");
             if (is_loop_2 && shootingAttempts < shootingAttemptsMax)
             {
+                shootingAttempts++;
                 Debug.Log("SHOOTING! " + shootingAttempts);
-                shootingAttempts++; 
             }
             else
             {
