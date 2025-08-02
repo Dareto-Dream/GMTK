@@ -23,8 +23,8 @@ public class DialogueUI : MonoBehaviour
     private InputSystemUIInputModule uiInputModule;
 
     public PlayerInput playerInput;
-    
-    
+
+    private Action action;
 
     private void Awake()
     {
@@ -45,8 +45,9 @@ public class DialogueUI : MonoBehaviour
         playerInput.SwitchCurrentActionMap("Player");
     }
 
-    public void StartDialogue(DialogueScript script)
+    public void StartDialogue(DialogueScript script, Action function = null)
     {
+        action = function;
 
         if (uiInputModule != null)
             uiInputModule.enabled = false;
@@ -60,13 +61,12 @@ public class DialogueUI : MonoBehaviour
         if (clickAction != null) clickAction.performed += clickCallback;
 
         StartCoroutine(TypeLine());
-        Debug.LogWarning("Started coroutine!");
     }
 
     public void EndDialogue()
     {
         if (clickAction != null && clickCallback != null)
-        clickAction.performed -= clickCallback;
+            clickAction.performed -= clickCallback;
 
         if (uiInputModule != null)
             uiInputModule.enabled = true;
@@ -74,7 +74,8 @@ public class DialogueUI : MonoBehaviour
         lines = null;
         dialoguePanel.SetActive(false);
         playerInput.SwitchCurrentActionMap("Player");
-        Debug.LogWarning("End of Dialogie!");
+        if (action != null)
+            action();
     }
 
     IEnumerator TypeLine()

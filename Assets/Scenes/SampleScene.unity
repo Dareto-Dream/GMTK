@@ -1299,6 +1299,9 @@ MonoBehaviour:
   targetMapIndex: 5
   mapController: {fileID: 2011812991}
   playerPosition: {x: -999, y: 1, z: -1}
+  is_loop_2: 0
+  positionChanger: {fileID: 0}
+  droppedItemPrefab: {fileID: 0}
 --- !u!61 &79009311
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1393,6 +1396,9 @@ MonoBehaviour:
   targetMapIndex: 1
   mapController: {fileID: 2011812991}
   playerPosition: {x: -999, y: 1, z: -1}
+  is_loop_2: 0
+  positionChanger: {fileID: 0}
+  droppedItemPrefab: {fileID: 0}
 --- !u!61 &135307718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4536,6 +4542,9 @@ MonoBehaviour:
   targetMapIndex: 1
   mapController: {fileID: 2011812991}
   playerPosition: {x: -999, y: 1, z: -1}
+  is_loop_2: 0
+  positionChanger: {fileID: 0}
+  droppedItemPrefab: {fileID: 0}
 --- !u!61 &299275172
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5673,6 +5682,9 @@ MonoBehaviour:
   targetMapIndex: 4
   mapController: {fileID: 2011812991}
   playerPosition: {x: -999, y: 1, z: -1}
+  is_loop_2: 0
+  positionChanger: {fileID: 0}
+  droppedItemPrefab: {fileID: 0}
 --- !u!61 &351350908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8442,7 +8454,14 @@ MonoBehaviour:
   - {fileID: -1679085568475732275, guid: da9a0de0ea02e5343b700ccdbee2a9a9, type: 3}
   - {fileID: -4960229840327395196, guid: 4d16c811b186563ab9e144f7e2a82e43, type: 3}
   - {fileID: -8398409672689469449, guid: 7afc2164ec25fbec48b36519a7065c1b, type: 3}
-  script: {fileID: 11400000, guid: 7d47d36f96cc0384fa2f573d67b79730, type: 2}
+  emptySprite: {fileID: -7069967282533533396, guid: 989616163c34b954b9c7d5015f680a66, type: 3}
+  scriptLoop1: {fileID: 11400000, guid: d753a799f4f9a8da3b844ab12e2d027a, type: 2}
+  scriptLoop2_1: {fileID: 0}
+  scriptLoop2_2: {fileID: 0}
+  scriptLoop4: {fileID: 0}
+  is_loop_1: 0
+  is_loop_2: 0
+  is_loop_4: 0
 --- !u!50 &519420034
 Rigidbody2D:
   serializedVersion: 5
@@ -12053,7 +12072,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553725669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12150,6 +12169,9 @@ MonoBehaviour:
   targetMapIndex: 3
   mapController: {fileID: 2011812991}
   playerPosition: {x: -999, y: 1, z: -1}
+  is_loop_2: 0
+  positionChanger: {fileID: 0}
+  droppedItemPrefab: {fileID: 0}
 --- !u!61 &570609485
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14842,6 +14864,9 @@ MonoBehaviour:
   targetMapIndex: 3
   mapController: {fileID: 2011812991}
   playerPosition: {x: -999, y: 1, z: -1}
+  is_loop_2: 0
+  positionChanger: {fileID: 0}
+  droppedItemPrefab: {fileID: 0}
 --- !u!61 &1021071760
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14917,6 +14942,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32ba99f7c2491072804fe5a3c776ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sniperHandler: {fileID: 519420033}
+  playerController: {fileID: 1179081995}
+  mapController: {fileID: 2011812991}
+  sniperSpot: {fileID: 1479914646}
 --- !u!4 &1058340569
 Transform:
   m_ObjectHideFlags: 0
@@ -15519,6 +15548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7249c10faa8a829e9a262aab776b243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  is_loop_5: 0
+  is_loop_6: 0
 --- !u!1 &1184704989
 GameObject:
   m_ObjectHideFlags: 0
@@ -18055,8 +18086,8 @@ Transform:
   m_GameObject: {fileID: 1479914644}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: -6.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.5, y: -5.5, z: 0}
+  m_LocalScale: {x: 1, y: -1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 934810815}
@@ -18073,8 +18104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb3619a359b036a89d55d535d233936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sniperRifle: {fileID: 1102223825, guid: 7a9fb400cf7835046995a00dd01056fb, type: 3}
-  playerPos: {x: -4.5, y: -5.6, z: -1}
+  sniperRifle: {fileID: 6649777781602643607, guid: e07639a2c7ce356f7866b6293dc116db, type: 3}
+  playerPos: {x: -4.5, y: -4.6, z: -1}
+  squareSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   mapController: {fileID: 2011812991}
   sniperRifleAim: {fileID: 1428422889}
 --- !u!212 &1479914647
@@ -18253,6 +18285,9 @@ MonoBehaviour:
   targetMapIndex: 2
   mapController: {fileID: 2011812991}
   playerPosition: {x: -999, y: 1, z: -1}
+  is_loop_2: 0
+  positionChanger: {fileID: 0}
+  droppedItemPrefab: {fileID: 0}
 --- !u!61 &1521521632
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18603,6 +18638,9 @@ MonoBehaviour:
   targetMapIndex: 0
   mapController: {fileID: 2011812991}
   playerPosition: {x: -999, y: 1, z: -1}
+  is_loop_2: 0
+  positionChanger: {fileID: 0}
+  droppedItemPrefab: {fileID: 0}
 --- !u!61 &1659536756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18697,6 +18735,9 @@ MonoBehaviour:
   targetMapIndex: 4
   mapController: {fileID: 2011812991}
   playerPosition: {x: -999, y: 1, z: -1}
+  is_loop_2: 0
+  positionChanger: {fileID: 0}
+  droppedItemPrefab: {fileID: 0}
 --- !u!61 &1660264264
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21586,6 +21627,9 @@ MonoBehaviour:
   targetMapIndex: 2
   mapController: {fileID: 2011812991}
   playerPosition: {x: -999, y: 1, z: -1}
+  is_loop_2: 0
+  positionChanger: {fileID: 0}
+  droppedItemPrefab: {fileID: 0}
 --- !u!61 &2040536094
 BoxCollider2D:
   m_ObjectHideFlags: 0

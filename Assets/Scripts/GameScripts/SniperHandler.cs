@@ -19,11 +19,32 @@ public class SniperHandler : MonoBehaviour
     [SerializeField] private GameObject sniperRifleAim;
     [SerializeField] private MapController mapController;
     [SerializeField] private Sprite[] birdAnimation;
+    [SerializeField] private Sprite emptySprite;
 
-    public DialogueScript script;
+    public DialogueScript scriptLoop1;
+    public DialogueScript scriptLoop2_1;
+    public DialogueScript scriptLoop2_2;
+    public DialogueScript scriptLoop4;
     private DialogueUI dialogueUI;
 
     private float SPEED_MULTIPLIER = 5f;
+
+    private int shootingAttempts = 0;
+    private int shootingAttemptsMax = 3;
+
+    [HideInInspector] public bool is_loop_1 = false;
+    [HideInInspector] public bool is_loop_2 = false;
+    [HideInInspector] public bool is_loop_4 = false;
+
+    public void LoopReset()
+    {
+        is_loop_1 = false;
+        is_loop_2 = false;
+        is_loop_4 = false;
+        is_shooting = false;
+        is_sniping = false;
+        bird.GetComponent<UnityEngine.UI.Image>().sprite = emptySprite;
+    }
 
     private void Awake()
     {
@@ -53,18 +74,41 @@ public class SniperHandler : MonoBehaviour
         mapController.ChangeMap(6);
         _Rigidbody.simulated = false;
 
-        dialogueUI.StartDialogue(script);
-        Debug.LogWarning("Started dialogue!");
+        if (is_loop_1)
+        {
+            dialogueUI.StartDialogue(scriptLoop1, GameManager.Instance.EndLoop);
+        }
+        else if (is_loop_2)
+        {
+            dialogueUI.StartDialogue(scriptLoop2_1);
+        }
+        else if (is_loop_4)
+        {
+            dialogueUI.StartDialogue(scriptLoop4);
+        }
     }
 
     private IEnumerator ShootingMagic()
     {
-        foreach (Sprite sprite in birdAnimation)
+        if (is_loop_1)
         {
-            yield return new WaitForSeconds(0f);
-            bird.GetComponent<UnityEngine.UI.Image>().sprite = sprite;
+            // NOTE: add shooting sounds
+            foreach (Sprite sprite in birdAnimation)
+            {
+                yield return new WaitForSeconds(0.02f);
+                bird.GetComponent<UnityEngine.UI.Image>().sprite = sprite;
+            }
+            StopSniping();
+
         }
-        StopSniping();
+        else if (is_loop_2)
+        {
+
+        }
+        else if (is_loop_4)
+        {
+
+        }
     }
 
     private void FixedUpdate()
@@ -74,6 +118,11 @@ public class SniperHandler : MonoBehaviour
         _Rigidbody.linearVelocity = _Movement * SPEED_MULTIPLIER; // sprint or walk
         if (playerController.GetMouseButton() && !is_shooting)
         {
+            if (is_loop_2 && shootingAttempts < shootingAttemptsMax)
+            {
+                shootingAttempts++;
+                return;
+            }
             StartCoroutine(ShootingMagic());
             is_shooting = true;
         }

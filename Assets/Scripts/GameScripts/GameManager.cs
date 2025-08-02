@@ -2,15 +2,80 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private int loopCount = 0;
+
+    [SerializeField] private SniperHandler sniperHandler;
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private MapController mapController;
+    [SerializeField] private SniperSpot sniperSpot;
+
+    public static GameManager Instance { get; private set; }
+
+    private void Awake()
     {
-        
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
+        StartNewLoop();
+    }
+
+
+
+    public void StartNewLoop()
+    {
+        loopCount++;
+        // Reset world state here
+        Debug.Log($"Loop {loopCount} started!");
+
+        // RESET everything!
+        sniperHandler.LoopReset();
+        playerController.LoopReset();
+        sniperSpot.LoopReset();
         
+
+        switch (loopCount)
+        {
+            // First case: missing the shot because of a bird
+            // Second case: lost the ammo, and when returned everyone left the stage
+            // Third case: Guards are waiting for him
+            // Fourth case: He sets up a weapon in the wrong way and it explodes
+            // Fifth case: Guards stop him again
+            // Sixth case: He kills victim and dies, or victim kills him.
+
+
+            case 1:
+                sniperHandler.is_loop_1 = true;
+                mapController.ChangeMap(0);
+                break;
+            case 2:
+                sniperHandler.is_loop_2 = true;
+                mapController.ChangeMap(0);
+                break;
+            case 3:
+                mapController.ChangeMap(0);
+                break;
+            case 4:
+                sniperHandler.is_loop_4 = true;
+                mapController.ChangeMap(0);
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+        }
+    }
+
+    public void EndLoop()
+    {
+        Debug.Log($"Loop {loopCount} ended!");
+        if (loopCount == 6) return;
+        StartNewLoop();
     }
 }

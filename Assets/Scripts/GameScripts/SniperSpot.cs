@@ -6,6 +6,7 @@ public class SniperSpot : MonoBehaviour, IInteractable
 
     [SerializeField] private Sprite sniperRifle;
     [SerializeField] private Vector3 playerPos;
+    [SerializeField] private Sprite squareSprite;
 
     public MapController mapController;
 
@@ -16,6 +17,14 @@ public class SniperSpot : MonoBehaviour, IInteractable
 
     private PlayerController playerController;
 
+    public void LoopReset()
+    {
+        is_done = false;
+        is_set_up = false;
+        GetComponent<SpriteRenderer>().sprite = squareSprite;
+        GetComponent<SpriteRenderer>().color = new Color(0f,1f,0.3f,0.5f);
+    }
+
     public void Interact()
     {
         if (!is_set_up)
@@ -24,7 +33,7 @@ public class SniperSpot : MonoBehaviour, IInteractable
             playerController.Freeze();
             StartCoroutine(SetSniperRifle());
         }
-        else if(is_set_up && !is_done)
+        else if (is_set_up && !is_done)
         {
             is_done = true;
             playerController.Hide();
@@ -41,6 +50,7 @@ public class SniperSpot : MonoBehaviour, IInteractable
         GetComponent<SpriteRenderer>().sprite = sniperRifle;
         Debug.Log("Sniper is set up, ready to shoot!");
         is_set_up = true;
+        GetComponent<SpriteRenderer>().color = new Color(0f,1f,0.3f,1f);
     }
 
 

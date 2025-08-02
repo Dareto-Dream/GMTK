@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     private bool is_freezing = false;
     private bool is_mouse_down = false;
 
+    public bool is_loop_5 = false;
+    public bool is_loop_6 = false;
+
     //constants
     private float SPEED_MULTIPLIER = 5f;
     private float SPRINTING_SPEED_MULTIPLIER = 10f;
@@ -36,6 +39,20 @@ public class PlayerController : MonoBehaviour
         mouseAction.canceled += ctx => OnMouseUp();
     }
 
+    public void LoopReset()
+    {
+        is_freezing = false;
+        is_freezing = false;
+        is_mouse_down = false;
+        if (is_loop_5 || is_loop_6)
+        {
+            transform.position = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            transform.position = new Vector3(-4.5f, 1f, -1f);
+        }
+    }
 
     public void Freeze()
     {
