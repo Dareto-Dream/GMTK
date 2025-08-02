@@ -46,12 +46,13 @@ public class SniperHandler : MonoBehaviour
     public void LoopReset()
     {
         is_loop_1 = false;
-        is_loop_2 = false;
         is_loop_4 = false;
         is_shooting = false;
         is_sniping = false;
         if (is_loop_2) is_able_to_shoot = false;
         try_to_find_object = false;
+        shootingAttempts = 0;
+
         bird.GetComponent<UnityEngine.UI.Image>().sprite = emptySprite;
     }
 
@@ -151,7 +152,7 @@ public class SniperHandler : MonoBehaviour
         _Rigidbody.linearVelocity = _Movement * SPEED_MULTIPLIER; // sprint or walk
         if (playerController.GetMouseButton() && !is_shooting)
         {
-            Debug.Log("Pressed LMB");
+            Debug.Log("Pressed LMB " + shootingAttempts + " " + is_shooting + " " + is_able_to_shoot);
             if (is_loop_2 && shootingAttempts < shootingAttemptsMax)
             {
                 shootingAttempts++;
