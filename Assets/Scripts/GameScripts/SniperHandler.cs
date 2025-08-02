@@ -35,6 +35,7 @@ public class SniperHandler : MonoBehaviour
     [HideInInspector] public bool is_loop_1 = false;
     [HideInInspector] public bool is_loop_2 = false;
     [HideInInspector] public bool is_loop_4 = false;
+    [HideInInspector] public bool is_able_to_shoot = true;
 
     public void LoopReset()
     {
@@ -43,6 +44,7 @@ public class SniperHandler : MonoBehaviour
         is_loop_4 = false;
         is_shooting = false;
         is_sniping = false;
+        is_able_to_shoot = true;
         bird.GetComponent<UnityEngine.UI.Image>().sprite = emptySprite;
     }
 
@@ -60,6 +62,7 @@ public class SniperHandler : MonoBehaviour
 
     public void StartSniping()
     {
+        if (is_loop_2) is_able_to_shoot = false;
         _Rigidbody.simulated = true;
         is_sniping = true;
     }
@@ -103,7 +106,8 @@ public class SniperHandler : MonoBehaviour
         }
         else if (is_loop_2)
         {
-
+            yield return new WaitForSeconds(2f);
+            StopSniping();
         }
         else if (is_loop_4)
         {
@@ -120,11 +124,14 @@ public class SniperHandler : MonoBehaviour
         {
             if (is_loop_2 && shootingAttempts < shootingAttemptsMax)
             {
-                shootingAttempts++;
-                return;
+                Debug.Log("SHOOTING! " + shootingAttempts);
+                shootingAttempts++; 
             }
-            StartCoroutine(ShootingMagic());
-            is_shooting = true;
+            else
+            {
+                StartCoroutine(ShootingMagic());
+                is_shooting = true;
+            }
         }
     }
 }

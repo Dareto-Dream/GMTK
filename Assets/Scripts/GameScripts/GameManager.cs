@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int loopCount = 0;
+    private int loopCount = 1;
 
     [SerializeField] private SniperHandler sniperHandler;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private MapController mapController;
     [SerializeField] private SniperSpot sniperSpot;
+    [SerializeField] private DroppedItemSpawner droppedItemSpawner;
 
     public static GameManager Instance { get; private set; }
 
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 2:
                 sniperHandler.is_loop_2 = true;
+                droppedItemSpawner.is_loop_2 = true;
                 mapController.ChangeMap(0);
                 break;
             case 3:
