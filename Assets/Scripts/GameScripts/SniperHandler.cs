@@ -143,6 +143,7 @@ public class SniperHandler : MonoBehaviour
         {
             if (GameObject.FindGameObjectWithTag("SniperSpot") != null && GameManager.Instance.IsLoop(2))
             {
+                AudioHandler.Instance.PlayMusic(AudioHandler.Instance.actionTheme);
                 GameObject.FindGameObjectWithTag("SniperSpot").GetComponent<SniperSpot>().is_done = false;
                 try_to_find_object = false;
                 is_shooting = false;
@@ -156,6 +157,7 @@ public class SniperHandler : MonoBehaviour
         }
         if (!is_sniping)
         {
+            AudioHandler.Instance.PlayMusic(AudioHandler.Instance.mainTheme);
             Vector3 some = playerController.gameObject.transform.position;
             transform.position = new Vector3(some.x, some.y, -10);
             return;
@@ -168,6 +170,7 @@ public class SniperHandler : MonoBehaviour
             if (GameManager.Instance.IsLoop(2) && shootingAttempts < shootingAttemptsMax)
             {
                 shootingAttempts++;
+                AudioHandler.Instance.PlaySFX(AudioHandler.Instance.shoot);
                 Debug.Log("SHOOTING! " + shootingAttempts);
             }
             else
