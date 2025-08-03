@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     private bool is_sprinting = false;
     private bool is_freezing = false;
     private bool is_mouse_down = false;
-    private bool is_moving = false;
 
     public bool is_loop_5 = false;
     public bool is_loop_6 = false;
