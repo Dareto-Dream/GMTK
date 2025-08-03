@@ -17,7 +17,7 @@ public class ButtonManager : MonoBehaviour
     public string gifFramePrefix = "Gif/Loading/Untitled_Artwork-";
     public int gifStart = 1;
     public int gifEnd = 29;
-    public float frameDelay = 0.05f;
+    public float frameDelay = 0.1f;
 
     // Called when Start button is pressed
     public void StartGame()
@@ -27,6 +27,20 @@ public class ButtonManager : MonoBehaviour
 
     private IEnumerator PlaySplashThenLoad()
     {
+        splashBgImage.gameObject.SetActive(true);
+        gifImage.gameObject.SetActive(true);
+        // Set RectTransform to fill canvas
+        RectTransform bgRect = splashBgImage.GetComponent<RectTransform>();
+        bgRect.anchorMin = Vector2.zero;
+        bgRect.anchorMax = Vector2.one;
+        bgRect.offsetMin = Vector2.zero;
+        bgRect.offsetMax = Vector2.zero;
+
+        RectTransform gifRect = gifImage.GetComponent<RectTransform>();
+        gifRect.anchorMin = Vector2.zero;
+        gifRect.anchorMax = Vector2.one;
+        gifRect.offsetMin = Vector2.zero;
+        gifRect.offsetMax = Vector2.zero;
         // Load and show background PNG (if you have one, else comment this out)
         Sprite bgSprite = Resources.Load<Sprite>(bgResourceName);
         if (bgSprite && splashBgImage)
