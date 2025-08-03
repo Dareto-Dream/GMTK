@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -7,10 +10,57 @@ public class ButtonManager : MonoBehaviour
     public GameObject optionsCanvas;
     public string GameScene;
 
+    [Header("Splash Animation")]
+    public Image splashBgImage;       // Assign in inspector
+    public Image gifImage;            // Assign in inspector
+    public string bgResourceName = "splash_bg"; // Without extension, must be in Resources/
+    public string gifFramePrefix = "Gif/Loading/Untitled_Artwork-";
+    public int gifStart = 1;
+    public int gifEnd = 29;
+    public float frameDelay = 0.05f;
+
     // Called when Start button is pressed
     public void StartGame()
     {
-        // Change "GameScene" to your actual scene name
+        StartCoroutine(PlaySplashThenLoad());
+    }
+
+    private IEnumerator PlaySplashThenLoad()
+    {
+        // Load and show background PNG (if you have one, else comment this out)
+        Sprite bgSprite = Resources.Load<Sprite>(bgResourceName);
+        if (bgSprite && splashBgImage)
+        {
+            splashBgImage.sprite = bgSprite;
+            splashBgImage.gameObject.SetActive(true);
+        }
+
+        // Load GIF frames
+        List<Sprite> frames = new List<Sprite>();
+        for (int i = gifStart; i <= gifEnd; i++)
+        {
+            string path = gifFramePrefix + i;
+            Sprite frame = Resources.Load<Sprite>(path);
+            if (frame != null)
+                frames.Add(frame);
+            else
+                Debug.LogWarning($"Frame not found: {path}");
+        }
+
+        // Show and animate GIF
+        if (gifImage)
+            gifImage.gameObject.SetActive(true);
+        foreach (Sprite frame in frames)
+        {
+            gifImage.sprite = frame;
+            yield return new WaitForSeconds(frameDelay);
+        }
+
+        // Hide splash UI (optional)
+        if (splashBgImage) splashBgImage.gameObject.SetActive(false);
+        if (gifImage) gifImage.gameObject.SetActive(false);
+
+        // Load the scene
         SceneManager.LoadScene(GameScene);
     }
 
