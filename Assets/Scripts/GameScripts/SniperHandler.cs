@@ -53,7 +53,7 @@ public class SniperHandler : MonoBehaviour
         is_loop_4 = false;
         is_shooting = false;
         is_sniping = false;
-        if (is_loop_2) is_able_to_shoot = false;
+        if (GameManager.Instance.IsLoop(2)) is_able_to_shoot = false;
         try_to_find_object = false;
         shootingAttempts = 0;
 
@@ -89,11 +89,11 @@ public class SniperHandler : MonoBehaviour
         mapController.ChangeMap(6);
         _Rigidbody.simulated = false;
 
-        if (is_loop_1)
+        if (GameManager.Instance.IsLoop(1))
         {
             dialogueUI.StartDialogue(scriptLoop1, GameManager.Instance.EndLoop);
         }
-        else if (is_loop_2)
+        else if (GameManager.Instance.IsLoop(2))
         {
             if (!is_able_to_shoot)
                 dialogueUI.StartDialogue(scriptLoop2_1);
@@ -110,7 +110,7 @@ public class SniperHandler : MonoBehaviour
 
     private IEnumerator ShootingMagic()
     {
-        if (is_loop_1)
+        if (GameManager.Instance.IsLoop(1))
         {
             // NOTE: add shooting sounds
             foreach (Sprite sprite in birdAnimation)
@@ -121,7 +121,7 @@ public class SniperHandler : MonoBehaviour
             StopSniping();
 
         }
-        else if (is_loop_2)
+        else if (GameManager.Instance.IsLoop(2))
         {
             if (!is_able_to_shoot)
             {
@@ -170,7 +170,7 @@ public class SniperHandler : MonoBehaviour
         if (playerController.GetMouseButton() && !is_shooting)
         {
             Debug.Log("Pressed LMB " + shootingAttempts + " " + is_shooting + " " + is_able_to_shoot);
-            if (is_loop_2 && shootingAttempts < shootingAttemptsMax)
+            if (GameManager.Instance.IsLoop(2) && shootingAttempts < shootingAttemptsMax)
             {
                 shootingAttempts++;
                 Debug.Log("SHOOTING! " + shootingAttempts);

@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         is_freezing = false;
         is_mouse_down = false;
 
-        if (is_loop_5)
+        if (GameManager.Instance.IsLoop(5))
         {
             transform.position = new Vector3(0, 0, 0);
             

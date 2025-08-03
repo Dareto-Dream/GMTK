@@ -34,7 +34,7 @@ public class ProblemSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (is_loop_2)
+        if (GameManager.Instance.IsLoop(2))
         {
             DropAmmo();
             is_loop_2 = false;

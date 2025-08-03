@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int loopCount = 3; // Set to 0 if you want to start at loop 1 in a real build
+    private int loopCount = 3; // Start at 0 for full play, 3 for mid-jam testing
 
     [SerializeField] private SniperHandler sniperHandler;
     [SerializeField] private PlayerController playerController;
@@ -16,6 +17,9 @@ public class GameManager : MonoBehaviour
     // Centralized loop state
     public int CurrentLoop => loopCount;
     public bool IsLoop(int n) => loopCount == n;
+
+    // Event for loop change
+    public event Action<int> OnLoopChanged;
 
     private void Awake()
     {
@@ -44,6 +48,9 @@ public class GameManager : MonoBehaviour
             playerController.LoopReset();
         }
         sniperSpot.LoopReset();
+
+        // Notify all listeners that the loop changed
+        OnLoopChanged?.Invoke(loopCount);
 
         // Loop-specific logic
         switch (loopCount)
