@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int loopCount = 0; // Start at 0 for full play, 3 for mid-jam testing
+    private int loopCount = 4; // Start at 0 for full play, 3 for mid-jam testing
 
     [SerializeField] private SniperHandler sniperHandler;
     [SerializeField] private PlayerController playerController;
