@@ -1,18 +1,28 @@
-using System.Collections;
 using UnityEngine;
 
 public class BarrierLogic : MonoBehaviour
 {
-    [HideInInspector] public bool is_loop_4 = false;
+    private BoxCollider2D barrier;
 
-
-
-    private void LateUpdate()
+    private void Awake()
     {
-        if (GameManager.Instance.IsLoop(4)) GetComponent<BoxCollider2D>().enabled = true;
-        else { GetComponent<BoxCollider2D>().enabled = false; }
+        barrier = GetComponent<BoxCollider2D>();
+    }
 
-        Debug.Log(" " + is_loop_4 + " Worked!");
+    private void OnEnable()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnLoopChanged += OnLoopChanged;
+    }
 
+    private void OnDisable()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnLoopChanged -= OnLoopChanged;
+    }
+
+    private void OnLoopChanged(int loop)
+    {
+        barrier.enabled = (loop == 4);
     }
 }
