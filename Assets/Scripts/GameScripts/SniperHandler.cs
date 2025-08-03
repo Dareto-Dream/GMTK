@@ -23,11 +23,14 @@ public class SniperHandler : MonoBehaviour
     [SerializeField] private Sprite emptySprite;
     [SerializeField] private GameObject NPC;
 
+    [SerializeField] private Sprite brokenSniperSprite;
+
     public DialogueScript scriptLoop1;
     public DialogueScript scriptLoop2_1;
     public DialogueScript scriptLoop2_2;
     public DialogueScript scriptLoop4;
     private DialogueUI dialogueUI;
+
 
     private float SPEED_MULTIPLIER = 5f;
 
@@ -101,7 +104,7 @@ public class SniperHandler : MonoBehaviour
         }
         else if (is_loop_4)
         {
-            dialogueUI.StartDialogue(scriptLoop4);
+            dialogueUI.StartDialogue(scriptLoop4, GameManager.Instance.EndLoop);
         }
     }
 
@@ -129,11 +132,13 @@ public class SniperHandler : MonoBehaviour
                 yield return new WaitForSeconds(2f);
                 StopSniping();
             }
-            
+
         }
         else if (is_loop_4)
         {
-
+            Debug.Log("Works correctly!");
+            try_to_find_object = true;
+            StopSniping();
         }
     }
 
@@ -141,12 +146,17 @@ public class SniperHandler : MonoBehaviour
     {
         if (try_to_find_object)
         {
-            if (GameObject.FindGameObjectWithTag("SniperSpot") != null)
+            if (GameObject.FindGameObjectWithTag("SniperSpot") != null && is_loop_2)
             {
                 GameObject.FindGameObjectWithTag("SniperSpot").GetComponent<SniperSpot>().is_done = false;
                 try_to_find_object = false;
                 is_shooting = false;
                 NPC.SetActive(false);
+            }
+            else if (GameObject.FindGameObjectWithTag("SniperSpot") != null && is_loop_4)
+            {
+                GameObject.FindGameObjectWithTag("SniperSpot").GetComponent<SpriteRenderer>().sprite = brokenSniperSprite;
+                try_to_find_object = false;
             }
         }
         if (!is_sniping)
@@ -167,6 +177,7 @@ public class SniperHandler : MonoBehaviour
             }
             else
             {
+                Debug.Log("WORKS");
                 StartCoroutine(ShootingMagic());
                 is_shooting = true;
             }

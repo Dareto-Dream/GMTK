@@ -13,14 +13,18 @@ public class PlayerController : MonoBehaviour
     //idk how to call it but okay, vars
     private PlayerInput playerInput;
     private CharacterAnimationLogic characterAnimationLogic;
+    [SerializeField] private DialogueScript script;
+    [SerializeField] private DialogueUI dialogueUI;
 
     //bools
     private bool is_sprinting = false;
     private bool is_freezing = false;
     private bool is_mouse_down = false;
 
-    public bool is_loop_5 = false;
-    public bool is_loop_6 = false;
+    [HideInInspector] public bool is_loop_4 = false;
+    [HideInInspector] public bool is_loop_5 = false;
+
+    
 
     //constants
     private float SPEED_MULTIPLIER = 5f; // Change to 4f
@@ -46,13 +50,20 @@ public class PlayerController : MonoBehaviour
         is_freezing = false;
         is_freezing = false;
         is_mouse_down = false;
-        if (is_loop_5 || is_loop_6)
+
+        if (is_loop_5)
         {
             transform.position = new Vector3(0, 0, 0);
+            
         }
         else
         {
             transform.position = new Vector3(-4.5f, 1f, -1f);
+        }
+        
+        if (is_loop_4 && !is_loop_5)
+        {
+            dialogueUI.StartDialogue(script);
         }
     }
 

@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int loopCount = 2;
+    private int loopCount = 3;
 
     [SerializeField] private SniperHandler sniperHandler;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private MapController mapController;
     [SerializeField] private SniperSpot sniperSpot;
     [SerializeField] private ProblemSpawner problemSpawner;
+    [SerializeField] private BarrierLogic barrierLogic;
 
     public static GameManager Instance { get; private set; }
 
@@ -64,10 +65,13 @@ public class GameManager : MonoBehaviour
                 mapController.ChangeMap(0);
                 break;
             case 4:
+                barrierLogic.is_loop_4 = true;
                 sniperHandler.is_loop_4 = true;
-                mapController.ChangeMap(0);
+                playerController.is_loop_4 = true;
+                mapController.ChangeMap(4);
                 break;
             case 5:
+                playerController.is_loop_5 = true;
                 break;
         }
     }

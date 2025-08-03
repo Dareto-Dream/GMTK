@@ -6,10 +6,14 @@ public class ProblemSpawner : MonoBehaviour
     private Vector3 positionOfDroppedItem = new Vector3(-2.5f, 7.5f, -1f);
 
     [SerializeField] private GameObject droppedItemPrefab;
-    [SerializeField] private GameObject guard;
+    [SerializeField] private GameObject guardPrefab;
 
     [HideInInspector] public bool is_loop_2 = false;
     [HideInInspector] public bool is_loop_3 = false;
+
+    private bool is_spawned = false;
+
+    private GameObject guard;
 
     private void DropAmmo()
     {
@@ -19,11 +23,12 @@ public class ProblemSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (is_loop_3)
+        if (is_loop_3 && !is_spawned)
         {
-            Instantiate(guard, transform);
-            is_loop_3 = false;
+            guard = Instantiate(guardPrefab, transform);
+            is_spawned = true;
         }
+
     }
 
 
