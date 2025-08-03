@@ -134,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9911907
 Transform:
   m_ObjectHideFlags: 0
@@ -2438,139 +2438,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 240886036}
-    m_ColliderPaths:
-    - - X: -60000000
-        Y: -72187504
-      - X: -30000000
-        Y: -72187504
-      - X: -30000000
-        Y: -73437504
-      - X: 22812500
-        Y: -73437504
-      - X: 23437500
-        Y: -72812496
-      - X: 23437500
-        Y: 36250000
-      - X: 22812500
-        Y: 36875000
-      - X: -82812496
-        Y: 36875000
-      - X: -83437504
-        Y: 36250000
-      - X: -83437504
-        Y: 13750000
-      - X: -83125000
-        Y: 10000000
-      - X: -80312496
-        Y: 10000000
-      - X: -80000000
-        Y: 14062500
-      - X: -80000000
-        Y: 30000000
-      - X: 20000000
-        Y: 30000000
-      - X: 20000000
-        Y: -70000000
-      - X: -120000000
-        Y: -70000000
-      - X: -120000000
-        Y: 0
-      - X: -80000000
-        Y: 0
-      - X: -80000000
-        Y: 6875000
-      - X: -122812496
-        Y: 6875000
-      - X: -123437504
-        Y: 6250000
-      - X: -123437504
-        Y: -72812496
-      - X: -122812496
-        Y: -73437504
-      - X: -60000000
-        Y: -73437504
-    - - X: 10000000
-        Y: 20000000
-      - X: 0
-        Y: 20000000
-      - X: 0
-        Y: 10000000
-      - X: 10000000
-        Y: 10000000
-    - - X: -20000000
-        Y: 20000000
-      - X: -30000000
-        Y: 20000000
-      - X: -30000000
-        Y: 10000000
-      - X: -20000000
-        Y: 10000000
-    - - X: -20000000
-        Y: -10000000
-      - X: -30000000
-        Y: -10000000
-      - X: -30000000
-        Y: -20000000
-      - X: -20000000
-        Y: -20000000
-    - - X: -70000000
-        Y: -10000000
-      - X: -80000000
-        Y: -10000000
-      - X: -80000000
-        Y: -20000000
-      - X: -70000000
-        Y: -20000000
-    - - X: -100000000
-        Y: -10000000
-      - X: -110000000
-        Y: -10000000
-      - X: -110000000
-        Y: -20000000
-      - X: -100000000
-        Y: -20000000
-    - - X: 10000000
-        Y: -10000000
-      - X: 0
-        Y: -10000000
-      - X: 0
-        Y: -20000000
-      - X: 10000000
-        Y: -20000000
-    - - X: -20000000
-        Y: -40000000
-      - X: -30000000
-        Y: -40000000
-      - X: -30000000
-        Y: -50000000
-      - X: -20000000
-        Y: -50000000
-    - - X: -70000000
-        Y: -40000000
-      - X: -80000000
-        Y: -40000000
-      - X: -80000000
-        Y: -50000000
-      - X: -70000000
-        Y: -50000000
-    - - X: -100000000
-        Y: -40000000
-      - X: -110000000
-        Y: -40000000
-      - X: -110000000
-        Y: -50000000
-      - X: -100000000
-        Y: -50000000
-    - - X: 10000000
-        Y: -40000000
-      - X: 0
-        Y: -40000000
-      - X: 0
-        Y: -50000000
-      - X: 10000000
-        Y: -50000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: -6.000029, y: -7.3437505}
@@ -6452,93 +6320,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 310852150}
-    m_ColliderPaths:
-    - - X: -40000000
-        Y: -72187504
-      - X: 0
-        Y: -72187504
-      - X: 0
-        Y: -73437504
-      - X: 22812500
-        Y: -73437504
-      - X: 23437500
-        Y: -72812496
-      - X: 23437500
-        Y: 36250000
-      - X: 22812500
-        Y: 36875000
-      - X: 20000000
-        Y: 36875000
-      - X: 20000000
-        Y: 40000000
-      - X: -10000000
-        Y: 40000000
-      - X: -10000000
-        Y: 36875000
-      - X: -12812500
-        Y: 36875000
-      - X: -13437500
-        Y: 36250000
-      - X: -13437500
-        Y: -20000000
-      - X: -10000000
-        Y: -20000000
-      - X: -10000000
-        Y: 30000000
-      - X: 20000000
-        Y: 30000000
-      - X: 20000000
-        Y: -70000000
-      - X: -60000000
-        Y: -70000000
-      - X: -60000000
-        Y: 30000000
-      - X: -50000000
-        Y: 30000000
-      - X: -50000000
-        Y: 30312500
-      - X: -40000000
-        Y: 30312500
-      - X: -40000000
-        Y: 30000000
-      - X: -30000000
-        Y: 30000000
-      - X: -30000000
-        Y: -20000000
-      - X: -26562500
-        Y: -20000000
-      - X: -26562500
-        Y: 36250000
-      - X: -27187500
-        Y: 36875000
-      - X: -40000000
-        Y: 36875000
-      - X: -40000000
-        Y: 35937500
-      - X: -50000000
-        Y: 35937500
-      - X: -50000000
-        Y: 36875000
-      - X: -62812500
-        Y: 36875000
-      - X: -63437500
-        Y: 36250000
-      - X: -63437500
-        Y: -72812496
-      - X: -62812500
-        Y: -73437504
-      - X: -40000000
-        Y: -73437504
-    - - X: -10000000
-        Y: -23125000
-      - X: -30000000
-        Y: -23125000
-      - X: -30000000
-        Y: -30000000
-      - X: -10000000
-        Y: -30000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: -4.000029, y: -7.3437505}
@@ -9251,13 +9033,13 @@ MonoBehaviour:
   - {fileID: -1679085568475732275, guid: da9a0de0ea02e5343b700ccdbee2a9a9, type: 3}
   - {fileID: -4960229840327395196, guid: 4d16c811b186563ab9e144f7e2a82e43, type: 3}
   - {fileID: -8398409672689469449, guid: 7afc2164ec25fbec48b36519a7065c1b, type: 3}
-  emptySprite: {fileID: -7069967282533533396, guid: 989616163c34b954b9c7d5015f680a66, type: 3}
-  NPC: {fileID: 1605770275}
-  brokenSniperSprite: {fileID: -7265286942762637189, guid: 667bb7c099a822564a586bca56394891, type: 3}
-  scriptLoop1: {fileID: 11400000, guid: d753a799f4f9a8da3b844ab12e2d027a, type: 2}
-  scriptLoop2_1: {fileID: 11400000, guid: 9f829b20dd9ab81bdbf2495c7f5b1233, type: 2}
-  scriptLoop2_2: {fileID: 11400000, guid: 332cc0f30c9f22c9999f51fc1be4e4d6, type: 2}
-  scriptLoop4: {fileID: 11400000, guid: 6ab14351e424efbf6ad68d57f48b5952, type: 2}
+  emptySprite: {fileID: 0}
+  NPC: {fileID: 0}
+  brokenSniperSprite: {fileID: 0}
+  scriptLoop1: {fileID: 0}
+  scriptLoop2_1: {fileID: 0}
+  scriptLoop2_2: {fileID: 0}
+  scriptLoop4: {fileID: 0}
   shootingAttempts: 0
   is_able_to_shoot: 1
 --- !u!50 &519420034
@@ -11934,7 +11716,7 @@ MonoBehaviour:
   sniperSpot: {fileID: 1479914646}
   problemSpawner: {fileID: 164439664}
   barrierLogic: {fileID: 1363084083}
-  sealedDoorLogic: {fileID: 0}
+  sealedDoorLogic: {fileID: 1384009870}
 --- !u!4 &1058340569
 Transform:
   m_ObjectHideFlags: 0
@@ -12466,9 +12248,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7249c10faa8a829e9a262aab776b243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptLoop4: {fileID: 11400000, guid: f47754966cf3f1b49bf4dc5d398b3273, type: 2}
+  scriptLoop4: {fileID: 0}
   scriptLoop5: {fileID: 0}
-  dialogueUI: {fileID: 2104400680}
+  dialogueUI: {fileID: 0}
 --- !u!114 &1179081996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14914,9 +14696,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sniperRifle: {fileID: 6649777781602643607, guid: e07639a2c7ce356f7866b6293dc116db, type: 3}
   playerPos: {x: -4.5, y: -4.6, z: -1}
-  squareSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  dialogueUI: {fileID: 2104400680}
-  scriptLoop5: {fileID: 11400000, guid: 89d7cd6b2f67b9d79ab2a309efbf7a40, type: 2}
+  squareSprite: {fileID: 0}
+  dialogueUI: {fileID: 0}
+  scriptLoop5: {fileID: 0}
   mapController: {fileID: 2011812991}
   sniperRifleAim: {fileID: 1428422889}
   is_done: 0
@@ -18130,7 +17912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1868646367
 Transform:
   m_ObjectHideFlags: 0
