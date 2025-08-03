@@ -15,17 +15,17 @@ MonoBehaviour:
   lines:
   - speakerName: Y O U
     text: WHAT THE???
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    characterFace: {fileID: 21300000, guid: 8a17d9eb3b398a74982f3872784a3a31, type: 3}
   - speakerName: Y O U
     text: My weapon exploded!
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    characterFace: {fileID: 21300000, guid: 8a17d9eb3b398a74982f3872784a3a31, type: 3}
   - speakerName: Y O U
     text: Did I set up it in the wrong way?!
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    characterFace: {fileID: 21300000, guid: 8a17d9eb3b398a74982f3872784a3a31, type: 3}
   - speakerName: Y O U
     text: I am frustrated by these attempts. I need to kill him in front of myself,
       then use my power, so I will know that he is killable.
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    characterFace: {fileID: 21300000, guid: 8a17d9eb3b398a74982f3872784a3a31, type: 3}
   - speakerName: Y O U
     text: Killswitch!!
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    characterFace: {fileID: 21300000, guid: 8a17d9eb3b398a74982f3872784a3a31, type: 3}
