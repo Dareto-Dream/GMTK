@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     //constants
     private float SPEED_MULTIPLIER = 4f; // Change to 4f
-    private float SPRINTING_SPEED_MULTIPLIER = 6f; //Change to 6f
+    private float SPRINTING_SPEED_MULTIPLIER = 25f; //Change to 6f
 
     private void Awake()
     {
