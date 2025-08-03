@@ -38,7 +38,10 @@ public class GameManager : MonoBehaviour
 
         // RESET everything!
         sniperHandler.LoopReset();
-        playerController.LoopReset();
+        if (loopCount < 4)
+        {
+            playerController.LoopReset();
+        }
         sniperSpot.LoopReset();
 
         switch (loopCount)
@@ -69,9 +72,11 @@ public class GameManager : MonoBehaviour
                 sniperHandler.is_loop_4 = true;
                 playerController.is_loop_4 = true;
                 mapController.ChangeMap(4);
+                playerController.LoopReset();
                 break;
             case 5:
                 playerController.is_loop_5 = true;
+                playerController.LoopReset();
                 break;
         }
     }
