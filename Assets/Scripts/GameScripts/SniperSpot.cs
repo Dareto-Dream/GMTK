@@ -8,6 +8,9 @@ public class SniperSpot : MonoBehaviour, IInteractable
     [SerializeField] private Vector3 playerPos;
     [SerializeField] private Sprite squareSprite;
 
+    [SerializeField] private DialogueUI dialogueUI;
+    [SerializeField] private DialogueScript scriptLoop5;
+
     public MapController mapController;
 
 
@@ -27,7 +30,12 @@ public class SniperSpot : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (!is_set_up)
+        if (GameManager.Instance.IsLoop(5))
+        {
+            playerController.Freeze();
+            dialogueUI.StartDialogue(scriptLoop5, playerController.Unfreeze);
+        }
+        else if (!is_set_up)
         {
             playerController.ChangePosition(playerPos);
             playerController.Freeze();

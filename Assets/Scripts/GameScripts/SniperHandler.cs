@@ -37,9 +37,6 @@ public class SniperHandler : MonoBehaviour
     [HideInInspector] public int shootingAttempts = 0;
     private int shootingAttemptsMax = 3;
 
-    [HideInInspector] public bool is_loop_1 = false;
-    [HideInInspector] public bool is_loop_2 = false;
-    [HideInInspector] public bool is_loop_4 = false;
     [HideInInspector] public bool is_able_to_shoot = true;
 
     public void ResetIsDone()
@@ -49,8 +46,6 @@ public class SniperHandler : MonoBehaviour
 
     public void LoopReset()
     {
-        is_loop_1 = false;
-        is_loop_4 = false;
         is_shooting = false;
         is_sniping = false;
         if (GameManager.Instance.IsLoop(2)) is_able_to_shoot = false;
@@ -146,14 +141,14 @@ public class SniperHandler : MonoBehaviour
     {
         if (try_to_find_object)
         {
-            if (GameObject.FindGameObjectWithTag("SniperSpot") != null && is_loop_2)
+            if (GameObject.FindGameObjectWithTag("SniperSpot") != null && GameManager.Instance.IsLoop(2))
             {
                 GameObject.FindGameObjectWithTag("SniperSpot").GetComponent<SniperSpot>().is_done = false;
                 try_to_find_object = false;
                 is_shooting = false;
                 NPC.SetActive(false);
             }
-            else if (GameObject.FindGameObjectWithTag("SniperSpot") != null && is_loop_4)
+            else if (GameObject.FindGameObjectWithTag("SniperSpot") != null && GameManager.Instance.IsLoop(4))
             {
                 GameObject.FindGameObjectWithTag("SniperSpot").GetComponent<SpriteRenderer>().sprite = brokenSniperSprite;
                 try_to_find_object = false;

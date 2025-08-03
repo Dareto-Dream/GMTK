@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Loop5 Where am I
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueScript
+  lines:
+  - speakerName: Y O U
+    text: Wait... What?
+    characterFace: {fileID: 21300000, guid: 8a17d9eb3b398a74982f3872784a3a31, type: 3}
+  - speakerName: Y O U
+    text: It should have to be the ground!
+    characterFace: {fileID: 21300000, guid: 8a17d9eb3b398a74982f3872784a3a31, type: 3}
+  - speakerName: Y O U
+    text: Wait... Is he... the same person, who...
+    characterFace: {fileID: 21300000, guid: 8a17d9eb3b398a74982f3872784a3a31, type: 3}

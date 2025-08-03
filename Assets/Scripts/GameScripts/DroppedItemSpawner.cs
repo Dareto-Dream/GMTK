@@ -13,6 +13,18 @@ public class ProblemSpawner : MonoBehaviour
 
     private GameObject guard;
 
+    private void Awake()
+    {
+        if (GameManager.Instance.IsLoop(3) && !spawnedGuard)
+        {
+            SpawnGuard();
+        }
+        else if (GameManager.Instance.IsLoop(5) && spawnedGuard)
+        {
+            Destroy(guard);
+        }
+    }
+
     private void OnEnable()
     {
         if (GameManager.Instance != null)
@@ -51,12 +63,6 @@ public class ProblemSpawner : MonoBehaviour
         if (GameManager.Instance.IsLoop(2) && !droppedAmmo)
         {
             DropAmmo();
-        }
-
-        // Only spawn guard in loop 3, and only once per loop
-        if (GameManager.Instance.IsLoop(3) && !spawnedGuard)
-        {
-            SpawnGuard();
         }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int loopCount = 3; // Start at 0 for full play, 3 for mid-jam testing
+    private int loopCount = 4; // Start at 0 for full play, 3 for mid-jam testing
 
     [SerializeField] private SniperHandler sniperHandler;
     [SerializeField] private PlayerController playerController;
@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SniperSpot sniperSpot;
     [SerializeField] private ProblemSpawner problemSpawner;
     [SerializeField] private BarrierLogic barrierLogic;
+    [SerializeField] private SealedDoorLogic sealedDoorLogic;
 
     public static GameManager Instance { get; private set; }
 
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
                 playerController.LoopReset();
                 break;
             case 5:
+                mapController.ChangeMap(0);
                 playerController.LoopReset();
                 break;
         }
