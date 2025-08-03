@@ -9283,7 +9283,7 @@ MonoBehaviour:
   - {fileID: -1679085568475732275, guid: da9a0de0ea02e5343b700ccdbee2a9a9, type: 3}
   - {fileID: -4960229840327395196, guid: 4d16c811b186563ab9e144f7e2a82e43, type: 3}
   - {fileID: -8398409672689469449, guid: 7afc2164ec25fbec48b36519a7065c1b, type: 3}
-  emptySprite: {fileID: 6505331718387507933, guid: 989616163c34b954b9c7d5015f680a66, type: 3}
+  emptySprite: {fileID: -7069967282533533396, guid: 989616163c34b954b9c7d5015f680a66, type: 3}
   NPC: {fileID: 1605770275}
   brokenSniperSprite: {fileID: -7265286942762637189, guid: 667bb7c099a822564a586bca56394891, type: 3}
   scriptLoop1: {fileID: 11400000, guid: d753a799f4f9a8da3b844ab12e2d027a, type: 2}
