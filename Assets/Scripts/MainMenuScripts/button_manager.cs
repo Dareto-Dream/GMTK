@@ -22,6 +22,8 @@ public class ButtonManager : MonoBehaviour
     // Called when Start button is pressed
     public void StartGame()
     {
+        AudioHandler.Instance.PlaySFX(AudioHandler.Instance.UIClick);
+
         StartCoroutine(PlaySplashThenLoad());
     }
 
@@ -81,17 +83,23 @@ public class ButtonManager : MonoBehaviour
     // Called when Options button is pressed
     public void ShowOptions()
     {
+        AudioHandler.Instance.PlaySFX(AudioHandler.Instance.UIClick);
+
         optionsCanvas?.SetActive(true);
     }
 
     public void HideOptions()
     {
+        AudioHandler.Instance.PlaySFX(AudioHandler.Instance.UIClick);
+
         optionsCanvas?.SetActive(false);
     }
 
     // Called when Exit button is pressed
     public void ExitGame()
     {
+        AudioHandler.Instance.PlaySFX(AudioHandler.Instance.UIClick);
+
         Debug.Log("Exiting game...");
         Application.Quit();
 
