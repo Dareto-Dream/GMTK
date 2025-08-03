@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 0d213712a6aea5b419b55297bb094fa9
+guid: 92a230da95347944aab8d8dd1b3a0b78
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4495936819232072856
-    second: fancy doors_0
-  - first:
-      213: 3563967892780111269
-    second: fancy doors_1
-  - first:
-      213: 3471762791083510151
-    second: fancy doors_2
+      213: -1510477298067108584
+    second: fancy walls_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,11 +100,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fancy doors_0
+      name: fancy walls_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 34
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -121,62 +115,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8946de277b6c46e30800000000000000
-      internalID: 4495936819232072856
+      spriteID: 81d0b6776e4b90be0800000000000000
+      internalID: -1510477298067108584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fancy doors_1
+      name: fancy walls_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 34
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a55e007ae1c57130800000000000000
-      internalID: 3563967892780111269
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fancy doors_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 78983f24ddd2e2030800000000000000
-      internalID: 3471762791083510151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fancy doors_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 2
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -187,8 +137,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22d25c2eba0b53ce4bd2be4cfb85aff6
-      internalID: 2131388394
+      spriteID: 1b66efb11947de91483778557252e0ea
+      internalID: -811626177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fancy walls_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b51d264118a6143484e16a5275d9958
+      internalID: -77525742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fancy walls_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8973ba2fbf0ea2eab74ff77a30d843
+      internalID: 373549346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fancy walls_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 327486327d71a7e0db23982d0b3854e8
+      internalID: -1248771783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fancy walls_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c957fe29aef61389c2eeaa6f264180
+      internalID: 2145086600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fancy walls_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4a42cb4cd207b50e9062eed66aaa457
+      internalID: 90585184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fancy walls_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae138c27085f919abc34bc5054bd8c7
+      internalID: 135804736
       vertices: []
       indices: 
       edges: []
@@ -197,7 +279,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: da65bcf32413237e1998f5eb711e06eb
+    spriteID: 4604cec5cca8d865e9e115fc0fe03924
     internalID: 0
     vertices: []
     indices: 
@@ -206,15 +288,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries:
-      - key: SpriteEditor.SliceOnImport
-        value: False
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      fancy doors_0: 4495936819232072856
-      fancy doors_1: 3563967892780111269
-      fancy doors_2: 3471762791083510151
-      fancy doors_3: 2131388394
+      fancy walls_0: -1510477298067108584
+      fancy walls_1: -811626177
+      fancy walls_2: -77525742
+      fancy walls_3: 373549346
+      fancy walls_4: -1248771783
+      fancy walls_5: 2145086600
+      fancy walls_6: 90585184
+      fancy walls_7: 135804736
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

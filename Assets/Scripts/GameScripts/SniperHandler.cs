@@ -21,6 +21,7 @@ public class SniperHandler : MonoBehaviour
     [SerializeField] private MapController mapController;
     [SerializeField] private Sprite[] birdAnimation;
     [SerializeField] private Sprite emptySprite;
+    [SerializeField] private GameObject NPC;
 
     public DialogueScript scriptLoop1;
     public DialogueScript scriptLoop2_1;
@@ -58,7 +59,7 @@ public class SniperHandler : MonoBehaviour
 
     private void Awake()
     {
-        playerController = transform.parent.GetComponent<PlayerController>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         _Rigidbody = GetComponent<Rigidbody2D>();
         bird = sniperRifleAim.transform.GetChild(0).gameObject;
     }
@@ -145,9 +146,15 @@ public class SniperHandler : MonoBehaviour
                 GameObject.FindGameObjectWithTag("SniperSpot").GetComponent<SniperSpot>().is_done = false;
                 try_to_find_object = false;
                 is_shooting = false;
+                NPC.SetActive(false);
             }
         }
-        if (!is_sniping) return;
+        if (!is_sniping)
+        {
+            Vector3 some = playerController.gameObject.transform.position;
+            transform.position = new Vector3(some.x, some.y, -10);
+            return;
+        }
         _Movement = playerController.GetMovement();
         _Rigidbody.linearVelocity = _Movement * SPEED_MULTIPLIER; // sprint or walk
         if (playerController.GetMouseButton() && !is_shooting)

@@ -142,9 +142,19 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Vector3 mouseScreenPos = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
+        mouseWorldPos.z = 0f;
+        Vector2 direction = (mouseWorldPos - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.x, -direction.y) * Mathf.Rad2Deg + 180f;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
         if (is_freezing)
+        {
+            _Rigidbody.linearVelocity = Vector2.zero;
             return;
-        _Rigidbody.linearVelocity = is_sprinting ? _Movement * SPRINTING_SPEED_MULTIPLIER : _Movement * SPEED_MULTIPLIER; // sprint or walk
+        }
+        _Rigidbody.linearVelocity = is_sprinting ? _Movement * SPRINTING_SPEED_MULTIPLIER : _Movement * SPEED_MULTIPLIER;
         if (_Movement.x != 0f || _Movement.y != 0f)
         {
             characterAnimationLogic.StartAnimation();
