@@ -7,6 +7,7 @@ public class ProblemSpawner : MonoBehaviour
 
     [SerializeField] private GameObject droppedItemPrefab;
     [SerializeField] private GameObject guardPrefab;
+    [SerializeField] private LampLogic lampLogic;
 
     private bool spawnedGuard = false;
     private bool droppedAmmo = false;
@@ -47,7 +48,7 @@ public class ProblemSpawner : MonoBehaviour
     private void DropAmmo()
     {
         droppedItem = Instantiate(droppedItemPrefab, positionOfDroppedItem, Quaternion.identity, transform.parent);
-        Debug.Log("Some light stuff. . .");
+        lampLogic.LightsOut();
         droppedAmmo = true;
     }
 

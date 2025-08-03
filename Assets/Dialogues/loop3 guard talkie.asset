@@ -15,19 +15,19 @@ MonoBehaviour:
   lines:
   - speakerName: Guard
     text: Stop! Show your items, or I shoot you!
-    characterFace: {fileID: 7517161418421729254, guid: 94ed81318a4891bf5b306577bb69f952, type: 3}
+    characterFace: {fileID: 7517161418421729254, guid: a7becbe49bd71de49abd265b1ec5ebf4, type: 3}
   - speakerName: Y O U
     text: Why should I show my private items?
-    characterFace: {fileID: 21300000, guid: 8a17d9eb3b398a74982f3872784a3a31, type: 3}
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
   - speakerName: Guard
     text: Our master wants to ensure that no one kills him.
-    characterFace: {fileID: 7517161418421729254, guid: 94ed81318a4891bf5b306577bb69f952, type: 3}
+    characterFace: {fileID: 7517161418421729254, guid: a7becbe49bd71de49abd265b1ec5ebf4, type: 3}
   - speakerName: Y O U
     text: And how can I be a subject?
-    characterFace: {fileID: 21300000, guid: 8a17d9eb3b398a74982f3872784a3a31, type: 3}
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
   - speakerName: Guard
     text: You can be a sniper. Show me your backpack
-    characterFace: {fileID: -923269068091526670, guid: e1de60e37e855ff1f8cd27c89b7d7a44, type: 3}
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
   - speakerName: Y O U
     text: Damn... Killswitch!
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    characterFace: {fileID: 7517161418421729254, guid: a7becbe49bd71de49abd265b1ec5ebf4, type: 3}
