@@ -3832,8 +3832,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 933482491}
+  m_Children: []
   m_Father: {fileID: 2126249969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -12897,6 +12896,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 2104400680}
   scriptLoop5: {fileID: 11400000, guid: ba09a51627387513eb5742306dab2e28, type: 2}
+  choicePanel: {fileID: 2126249968}
+  shootButton: {fileID: 1464739582}
+  waitButton: {fileID: 243083276}
+  endingPanel: {fileID: 1807307546}
+  endingText: {fileID: 434218327}
 --- !u!1 &1161211208
 GameObject:
   m_ObjectHideFlags: 0
