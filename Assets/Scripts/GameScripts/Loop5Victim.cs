@@ -1,18 +1,23 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class Loop5Victim : MonoBehaviour
 {
     [SerializeField] DialogueUI dialogueUI;
     [SerializeField] DialogueScript scriptLoop5;
+    [SerializeField] GameObject extraPanel;
     [Header("Choice UI")]
     [SerializeField] GameObject choicePanel;
     [SerializeField] Button shootButton;
     [SerializeField] Button waitButton;
+
+    [SerializeField] Button continueButton;
+
     [Header("Ending Display")]
     [SerializeField] GameObject endingPanel; // Panel to hold the ending text, optional
-    [SerializeField] Text endingText;        // Assign a UI Text or TMP_Text
+    [SerializeField] TextMeshProUGUI endingText;       // Assign a UI Text or TMP_Text
 
     private bool triggered = false;
 
@@ -29,7 +34,9 @@ public class Loop5Victim : MonoBehaviour
 
     private void TheEnd()
     {
+        Debug.Log("THe end");
         choicePanel.SetActive(true);
+        extraPanel.SetActive(true);
         shootButton.onClick.RemoveAllListeners();
         waitButton.onClick.RemoveAllListeners();
 
@@ -53,13 +60,16 @@ public class Loop5Victim : MonoBehaviour
     {
         if (endingPanel != null) endingPanel.SetActive(true);
         if (endingText != null)
+            endingText.text = text + "\n\n(Click to continue...)";
+        if (continueButton != null)
         {
-            endingText.text = text + "\n\n(Click anywhere to continue...)";
-            StartCoroutine(WaitForClickThenEnd());
+            continueButton.gameObject.SetActive(true);
+            continueButton.onClick.RemoveAllListeners();
+            continueButton.onClick.AddListener(EndGame);
         }
         else
         {
-            // If no text assigned, just end instantly
+            // If no button, just end instantly
             EndGame();
         }
     }
@@ -77,7 +87,10 @@ public class Loop5Victim : MonoBehaviour
     }
 
     private void EndGame()
-    {
-        SceneManager.LoadScene("Credits"); // Or Application.Quit()
-    }
+{
+    if (continueButton != null)
+        continueButton.gameObject.SetActive(false);
+    SceneManager.LoadScene("Credits");
+}
+
 }
