@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int loopCount = 3;
+    private int loopCount = 3; // Set to 0 if you want to start at loop 1 in a real build
 
     [SerializeField] private SniperHandler sniperHandler;
     [SerializeField] private PlayerController playerController;
@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private BarrierLogic barrierLogic;
 
     public static GameManager Instance { get; private set; }
+
+    // Centralized loop state
+    public int CurrentLoop => loopCount;
+    public bool IsLoop(int n) => loopCount == n;
 
     private void Awake()
     {
@@ -28,12 +32,9 @@ public class GameManager : MonoBehaviour
         StartNewLoop();
     }
 
-
-
     public void StartNewLoop()
     {
         loopCount++;
-        // Reset world state here
         Debug.Log($"Loop {loopCount} started!");
 
         // RESET everything!
@@ -44,38 +45,23 @@ public class GameManager : MonoBehaviour
         }
         sniperSpot.LoopReset();
 
+        // Loop-specific logic
         switch (loopCount)
         {
-            // First case: missing the shot because of a bird
-            // Second case: lost the ammo, and when returned everyone left the stage
-            // Third case: Guards are waiting for him
-            // Fourth case: He sets up a weapon in the wrong way and it explodes
-            // Fifth case: He kills victim and dies, or victim kills him.
-
-
             case 1:
-                sniperHandler.is_loop_1 = true;
                 mapController.ChangeMap(0);
                 break;
             case 2:
-                sniperHandler.is_loop_2 = true;
-                problemSpawner.is_loop_2 = true;
-                sniperHandler.LoopReset();
                 mapController.ChangeMap(0);
                 break;
             case 3:
-                problemSpawner.is_loop_3 = true;
                 mapController.ChangeMap(0);
                 break;
             case 4:
-                barrierLogic.is_loop_4 = true;
-                sniperHandler.is_loop_4 = true;
-                playerController.is_loop_4 = true;
                 mapController.ChangeMap(4);
                 playerController.LoopReset();
                 break;
             case 5:
-                playerController.is_loop_5 = true;
                 playerController.LoopReset();
                 break;
         }

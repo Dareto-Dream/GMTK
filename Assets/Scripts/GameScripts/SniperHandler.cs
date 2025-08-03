@@ -102,7 +102,7 @@ public class SniperHandler : MonoBehaviour
                 dialogueUI.StartDialogue(scriptLoop2_2, GameManager.Instance.EndLoop);
             }
         }
-        else if (is_loop_4)
+        else if (GameManager.Instance.IsLoop(4))
         {
             dialogueUI.StartDialogue(scriptLoop4, GameManager.Instance.EndLoop);
         }
@@ -134,7 +134,7 @@ public class SniperHandler : MonoBehaviour
             }
 
         }
-        else if (is_loop_4)
+        else if (GameManager.Instance.IsLoop(4))
         {
             Debug.Log("Works correctly!");
             try_to_find_object = true;
