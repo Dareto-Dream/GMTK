@@ -21,6 +21,7 @@ public class Loop5Victim : MonoBehaviour
         if (triggered) return;
         if (collision.CompareTag("Player") && GameManager.Instance.IsLoop(5))
         {
+            Debug.Log("THIS IS SPARTA");
             triggered = true;
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             dialogueUI.StartDialogue(scriptLoop5, TheEnd);

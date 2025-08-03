@@ -171,7 +171,6 @@ public class SniperHandler : MonoBehaviour
             else
             {
                 if(GameManager.Instance.IsLoop(1)) AudioHandler.Instance.PlaySFX(AudioHandler.Instance.shoot);
-                Debug.Log("WORKS");
                 StartCoroutine(ShootingMagic());
                 is_shooting = true;
             }
