@@ -13,6 +13,27 @@ MonoBehaviour:
   m_Name: Loop5 Last Words
   m_EditorClassIdentifier: Assembly-CSharp::DialogueScript
   lines:
-  - speakerName: TEST
-    text: Kill this git, I hate it
-    characterFace: {fileID: 0}
+  - speakerName: Y O U
+    text: What the-
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
+  - speakerName: T A R G E T
+    text: Back off. Who the hell are you?
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
+  - speakerName: Y O U
+    text: I could ask you the same thing.
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
+  - speakerName: T A R G E T
+    text: You here for the job too?
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
+  - speakerName: Y O U
+    text: Maybe I am.
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
+  - speakerName: T A R G E T
+    text: Then you know how this ends.
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
+  - speakerName: Y O U
+    text: You are in my way.
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
+  - speakerName: T A R G E T
+    text: You are in my way.
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}

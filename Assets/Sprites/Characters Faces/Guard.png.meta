@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 06264b6e6e2ca76ddaf8337631f2e5b0
+guid: a7becbe49bd71de49abd265b1ec5ebf4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8957828013051510
-    second: Aiuan_0
+      213: -7809785511404226330
+    second: Guard_0
+  - first:
+      213: 7517161418421729254
+    second: Guard_1
+  - first:
+      213: 170288124656062214
+    second: Guard_2
+  - first:
+      213: -6889201110466385560
+    second: Guard_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Aiuan_0
+      name: Guard_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 49
+        y: 258
+        width: 34
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a81b25327ec20eff0800000000000000
-      internalID: -8957828013051510
+      spriteID: 6e832c494711e9390800000000000000
+      internalID: -7809785511404226330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guard_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 30
+        width: 245
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e77c408b72525860800000000000000
+      internalID: 7517161418421729254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guard_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 14
+        width: 5
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60f879ba52cfc5200800000000000000
+      internalID: 170288124656062214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guard_3
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 0
+        width: 109
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 869ac603714a460a0800000000000000
+      internalID: -6889201110466385560
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Aiuan_0: -8957828013051510
+      Guard_0: -7809785511404226330
+      Guard_1: 7517161418421729254
+      Guard_2: 170288124656062214
+      Guard_3: -6889201110466385560
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

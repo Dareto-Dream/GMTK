@@ -15,13 +15,13 @@ MonoBehaviour:
   lines:
   - speakerName: Y O U
     text: What-
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
   - speakerName: Y O U
     text: The bird?!
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
   - speakerName: Y O U
     text: I shot the bird... I need to use my superpower, before it's too late.
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
   - speakerName: Y O U
     text: Killswitch.
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
