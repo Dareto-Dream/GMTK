@@ -34,12 +34,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        AudioHandler.Instance.PlayMusic(AudioHandler.Instance.mainTheme);
         StartNewLoop();
     }
 
     public void StartNewLoop()
     {
+        AudioHandler.Instance.PlayMusic(AudioHandler.Instance.mainTheme);
         loopCount++;
         Debug.Log($"Loop {loopCount} started!");
 
