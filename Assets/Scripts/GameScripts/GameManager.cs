@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        AudioHandler.Instance.PlayMusic(AudioHandler.Instance.mainTheme);
         StartNewLoop();
     }
 
