@@ -12934,8 +12934,8 @@ MonoBehaviour:
   sfxSource: {fileID: 2023813715}
   uiSource: {fileID: 855493834}
   mainMixer: {fileID: 24100000, guid: 0eeaa06560df2de48a4af72eebd6964a, type: 2}
-  mainTheme: {fileID: 8300000, guid: 49825a4318f041a41ad5f2d044dae479, type: 3}
-  actionTheme: {fileID: 8300000, guid: 25efc43ba3930124789182dfef5c9dce, type: 3}
+  mainTheme: {fileID: 8300000, guid: ff519fbd9e4cb61439a2afc8c39f6e88, type: 3}
+  actionTheme: {fileID: 8300000, guid: af79e412650c8de44a3966a4e2548535, type: 3}
   UIClick: {fileID: 8300000, guid: 56d250417e66be14f9c9f793344bdac8, type: 3}
   shoot: {fileID: 8300000, guid: 93935c9b145881d44ba91e8018d8216f, type: 3}
 --- !u!4 &1161211210
