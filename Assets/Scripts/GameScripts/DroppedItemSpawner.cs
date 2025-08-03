@@ -8,36 +8,55 @@ public class ProblemSpawner : MonoBehaviour
     [SerializeField] private GameObject droppedItemPrefab;
     [SerializeField] private GameObject guardPrefab;
 
-    [HideInInspector] public bool is_loop_2 = false;
-    [HideInInspector] public bool is_loop_3 = false;
-
-    private bool is_spawned = false;
+    private bool spawnedGuard = false;
+    private bool droppedAmmo = false;
 
     private GameObject guard;
+
+    private void OnEnable()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnLoopChanged += OnLoopChanged;
+    }
+
+    private void OnDisable()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnLoopChanged -= OnLoopChanged;
+    }
+
+    private void OnLoopChanged(int loop)
+    {
+        // Reset spawn trackers each loop
+        spawnedGuard = false;
+        droppedAmmo = false;
+    }
 
     private void DropAmmo()
     {
         droppedItem = Instantiate(droppedItemPrefab, positionOfDroppedItem, Quaternion.identity, transform.parent);
         Debug.Log("Some light stuff. . .");
+        droppedAmmo = true;
     }
 
-    private void Update()
+    private void SpawnGuard()
     {
-        if (is_loop_3 && !is_spawned)
-        {
-            guard = Instantiate(guardPrefab, transform);
-            is_spawned = true;
-        }
-
+        guard = Instantiate(guardPrefab, transform);
+        spawnedGuard = true;
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GameManager.Instance.IsLoop(2))
+        // Only drop ammo in loop 2, and only once per loop
+        if (GameManager.Instance.IsLoop(2) && !droppedAmmo)
         {
             DropAmmo();
-            is_loop_2 = false;
+        }
+
+        // Only spawn guard in loop 3, and only once per loop
+        if (GameManager.Instance.IsLoop(3) && !spawnedGuard)
+        {
+            SpawnGuard();
         }
     }
 }
