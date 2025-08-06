@@ -14,11 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueScript
   lines:
   - speakerName: Y O U
-    text: No. I don't want to use the weapon again. It only brings misfortune.
-    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
-  - speakerName: Y O U
-    text: It is better go wit h a melee and attack him.
-    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
-  - speakerName: Y O U
-    text: I need to go to floor 1 and exit this building.
+    text: No... It's better to kill him from a small distance.
     characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}

@@ -20,6 +20,15 @@ public class AudioHandler : MonoBehaviour
 
     [Header("SFX Clips")]
     public AudioClip shoot;
+    public AudioClip pistolShoot;
+    public AudioClip footsteps;
+    public AudioClip lampTurnOff;
+    public AudioClip lampTurnOn;
+    public AudioClip explosion;
+    public AudioClip dropItem;
+    public AudioClip ability;
+    public AudioClip doorOpen;
+    public AudioClip doorClose;
 
     private void Awake()
     {

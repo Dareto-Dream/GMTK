@@ -12896,11 +12896,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 2104400680}
   scriptLoop5: {fileID: 11400000, guid: ba09a51627387513eb5742306dab2e28, type: 2}
+  extraPanel: {fileID: 2126249968}
   choicePanel: {fileID: 2126249968}
   shootButton: {fileID: 1464739582}
   waitButton: {fileID: 243083276}
+  continueButton: {fileID: 0}
   endingPanel: {fileID: 1807307546}
-  endingText: {fileID: 434218327}
+  endingText: {fileID: 217488167}
 --- !u!1 &1161211208
 GameObject:
   m_ObjectHideFlags: 0
@@ -12938,6 +12940,15 @@ MonoBehaviour:
   actionTheme: {fileID: 8300000, guid: af79e412650c8de44a3966a4e2548535, type: 3}
   UIClick: {fileID: 8300000, guid: 56d250417e66be14f9c9f793344bdac8, type: 3}
   shoot: {fileID: 8300000, guid: 93935c9b145881d44ba91e8018d8216f, type: 3}
+  pistolShoot: {fileID: 8300000, guid: 853fbe19cfe0c6a4e8f0fb5b133a6e96, type: 3}
+  footsteps: {fileID: 8300000, guid: a083f0008880ce34cbb265fe0edd7c69, type: 3}
+  lampTurnOff: {fileID: 8300000, guid: 700ca75bb98767b47be47e4f806cdd47, type: 3}
+  lampTurnOn: {fileID: 8300000, guid: 589a2951d29e85047981ce89f235626e, type: 3}
+  explosion: {fileID: 8300000, guid: 4146fdb8025a13d45ad37f41513cb2d8, type: 3}
+  dropItem: {fileID: 8300000, guid: aaf1c537f0ff1bd4e8bdfd17a44dda8e, type: 3}
+  ability: {fileID: 8300000, guid: c7f12aebfec495b40b18d5c82bad2fb4, type: 3}
+  doorOpen: {fileID: 8300000, guid: eb72d22e8b9a9a543961e6d2f16fdeea, type: 3}
+  doorClose: {fileID: 8300000, guid: 5114c2ec86bf8ee4a90c26fbb8574a06, type: 3}
 --- !u!4 &1161211210
 Transform:
   m_ObjectHideFlags: 0
@@ -15723,9 +15734,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sniperRifle: {fileID: 6649777781602643607, guid: e07639a2c7ce356f7866b6293dc116db, type: 3}
   playerPos: {x: -4.5, y: -4.6, z: -1}
-  squareSprite: {fileID: 0}
-  dialogueUI: {fileID: 0}
-  scriptLoop5: {fileID: 0}
+  squareSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  dialogueUI: {fileID: 2104400680}
+  scriptLoop5: {fileID: 11400000, guid: 89d7cd6b2f67b9d79ab2a309efbf7a40, type: 2}
   mapController: {fileID: 2011812991}
   sniperRifleAim: {fileID: 1428422889}
   is_done: 0
@@ -20675,9 +20686,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
   scriptLoop5: {fileID: 0}
+  extraPanel: {fileID: 0}
   choicePanel: {fileID: 0}
   shootButton: {fileID: 0}
   waitButton: {fileID: 0}
+  continueButton: {fileID: 0}
   endingPanel: {fileID: 0}
   endingText: {fileID: 0}
 --- !u!1 &2093076948

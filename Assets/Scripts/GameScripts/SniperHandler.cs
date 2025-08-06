@@ -139,7 +139,7 @@ public class SniperHandler : MonoBehaviour
         {
             if (GameObject.FindGameObjectWithTag("SniperSpot") != null && GameManager.Instance.IsLoop(2))
             {
-                //AudioHandler.Instance.PlayMusic(AudioHandler.Instance.actionTheme);
+                AudioHandler.Instance.PlayMusic(AudioHandler.Instance.mainTheme);
                 GameObject.FindGameObjectWithTag("SniperSpot").GetComponent<SniperSpot>().is_done = false;
                 try_to_find_object = false;
                 is_shooting = false;
