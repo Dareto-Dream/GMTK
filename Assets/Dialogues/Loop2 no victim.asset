@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueScript
   lines:
   - speakerName: Y O U
-    text: DAMNIT! They are not here!
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    text: DAMNIT! He is not here!
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
   - speakerName: Y O U
     text: I need to travel to past again. . .
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
   - speakerName: Y O U
     text: Killswitch.
     characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}

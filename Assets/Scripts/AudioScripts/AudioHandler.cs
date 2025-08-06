@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -29,6 +30,31 @@ public class AudioHandler : MonoBehaviour
     public AudioClip ability;
     public AudioClip doorOpen;
     public AudioClip doorClose;
+
+    private void Start()
+    {
+
+    }
+
+private void DumpSource(string name, AudioSource src)
+{
+    if (src == null)
+    {
+        Debug.LogError($"{name} is null!");
+        return;
+    }
+    Debug.Log($"\n——— {name} Settings ———\n" +
+              $"Enabled:       {src.enabled}\n" +
+              $"GameObject On: {src.gameObject.activeInHierarchy}\n" +
+              $"Mute:          {src.mute}\n" +
+              $"Volume:        {src.volume}\n" +
+              $"SpatialBlend:  {src.spatialBlend}\n" +
+              $"Loop:          {src.loop}\n" +
+              $"Clip:          {(src.clip? src.clip.name : "null")}\n" +
+              $"OutputGroup:   {(src.outputAudioMixerGroup? src.outputAudioMixerGroup.name : "none")}"
+             );
+}
+
 
     private void Awake()
     {
@@ -63,11 +89,23 @@ public class AudioHandler : MonoBehaviour
         sfxSource.PlayOneShot(clip);
     }
 
+    public void StopSFX()
+    {
+        if (sfxSource == null) return;
+        sfxSource.Stop();
+    }
+
     // --- UI SFX ---
     public void PlayUI(AudioClip clip)
     {
-        if (uiSource == null || clip == null) return;
+        if (uiSource == null || clip == null || uiSource.isPlaying) return;
         uiSource.PlayOneShot(clip);
+    }
+
+    public void StopUI()
+    {
+        if (uiSource == null) return;
+        uiSource.Stop();
     }
 
     // --- Mixer Controls ---
@@ -78,9 +116,10 @@ public class AudioHandler : MonoBehaviour
         mainMixer.SetFloat("MasterVolume", Mathf.Log10(Mathf.Clamp(volume, 0.0001f, 1f)) * 20f);
     }
     public void SetMusicVolume(float volume)
-    {
-        if (mainMixer == null) return;
-        mainMixer.SetFloat("MusicVolume", Mathf.Log10(Mathf.Clamp(volume, 0.0001f, 1f)) * 20f);
+    {    if (mainMixer == null) return;
+        float db = Mathf.Log10(Mathf.Clamp(volume, 0.0001f, 1f)) * 20f;
+        bool success = mainMixer.SetFloat("MusicVolume", db);
+        if (!success) Debug.LogError("MusicVolume parameter not found!");
     }
     public void SetSFXVolume(float volume)
     {

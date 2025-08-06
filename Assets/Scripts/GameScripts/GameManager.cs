@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int loopCount = 4; // Start at 0 for full play, 3 for mid-jam testing
+    private int loopCount = 0; // Start at 0 for full play, 3 for mid-jam testing
 
     [SerializeField] private SniperHandler sniperHandler;
     [SerializeField] private PlayerController playerController;
@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     // Event for loop change
     public event Action<int> OnLoopChanged;
 
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -39,7 +40,15 @@ public class GameManager : MonoBehaviour
 
     public void StartNewLoop()
     {
-        AudioHandler.Instance.PlayMusic(AudioHandler.Instance.mainTheme);
+        if (AudioHandler.Instance != null && AudioHandler.Instance.mainTheme != null)
+        {
+            AudioHandler.Instance.SetMusicVolume(1.0f);
+            AudioHandler.Instance.PlayMusic(AudioHandler.Instance.mainTheme, loop: true);
+        }
+        else
+        {
+            Debug.LogWarning("AudioHandler.Instance or mainTheme is not assigned!");
+        }
         loopCount++;
         Debug.Log($"Loop {loopCount} started!");
 
@@ -79,6 +88,7 @@ public class GameManager : MonoBehaviour
 
     public void EndLoop()
     {
+        AudioHandler.Instance.PlaySFX(AudioHandler.Instance.ability);
         Debug.Log($"Loop {loopCount} ended!");
         if (loopCount == 6) return;
         StartNewLoop();

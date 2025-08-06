@@ -160,10 +160,12 @@ public class PlayerController : MonoBehaviour
         if (_Movement.x != 0f || _Movement.y != 0f)
         {
             characterAnimationLogic.StartAnimation();
+            AudioHandler.Instance.PlayUI(AudioHandler.Instance.footsteps);
         }
         else
         {
             characterAnimationLogic.StopAnimation();
+            AudioHandler.Instance.StopUI();
         }
 
     }

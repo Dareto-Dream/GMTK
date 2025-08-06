@@ -1419,7 +1419,7 @@ Transform:
   m_GameObject: {fileID: 120756695}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.30219, y: 0.99071, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11191,7 +11191,7 @@ AudioSource:
   m_GameObject: {fileID: 855493833}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 462104768160646408, guid: 0eeaa06560df2de48a4af72eebd6964a, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -11288,7 +11288,7 @@ Transform:
   m_GameObject: {fileID: 855493833}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.30219, y: 0.99071, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12938,7 +12938,7 @@ MonoBehaviour:
   mainMixer: {fileID: 24100000, guid: 0eeaa06560df2de48a4af72eebd6964a, type: 2}
   mainTheme: {fileID: 8300000, guid: ff519fbd9e4cb61439a2afc8c39f6e88, type: 3}
   actionTheme: {fileID: 8300000, guid: af79e412650c8de44a3966a4e2548535, type: 3}
-  UIClick: {fileID: 8300000, guid: 56d250417e66be14f9c9f793344bdac8, type: 3}
+  UIClick: {fileID: 8300000, guid: 79ff6c7c7a9fd6742a8bfcfa41e7a4a0, type: 3}
   shoot: {fileID: 8300000, guid: 93935c9b145881d44ba91e8018d8216f, type: 3}
   pistolShoot: {fileID: 8300000, guid: 853fbe19cfe0c6a4e8f0fb5b133a6e96, type: 3}
   footsteps: {fileID: 8300000, guid: a083f0008880ce34cbb265fe0edd7c69, type: 3}
@@ -12958,7 +12958,7 @@ Transform:
   m_GameObject: {fileID: 1161211208}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.30219, y: -0.99071, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20311,7 +20311,7 @@ AudioSource:
   m_GameObject: {fileID: 2023813714}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3619559486494967962, guid: 0eeaa06560df2de48a4af72eebd6964a, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -20408,7 +20408,7 @@ Transform:
   m_GameObject: {fileID: 2023813714}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.30219, y: 0.99071, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

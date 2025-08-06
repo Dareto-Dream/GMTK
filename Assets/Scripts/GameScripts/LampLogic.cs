@@ -11,8 +11,10 @@ public class LampLogic : MonoBehaviour
 
     private IEnumerator LightsOutAndOn()
     {
+        AudioHandler.Instance.PlaySFX(AudioHandler.Instance.lampTurnOff);
         GetComponent<Light2D>().enabled = false;
         yield return new WaitForSeconds(0.5f);
         GetComponent<Light2D>().enabled = true;
+        AudioHandler.Instance.PlaySFX(AudioHandler.Instance.lampTurnOn);
     }
 }

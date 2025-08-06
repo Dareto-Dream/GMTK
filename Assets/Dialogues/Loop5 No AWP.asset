@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueScript
   lines:
   - speakerName: Y O U
-    text: No... It's better to kill him from a small distance.
+    text: No... It's better to kill him from a small distance. I need to go to first
+      floor and leave this building.
     characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}

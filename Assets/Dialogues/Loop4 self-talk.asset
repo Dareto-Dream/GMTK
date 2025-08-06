@@ -16,4 +16,4 @@ MonoBehaviour:
   - speakerName: Y O U
     text: I managed to go to 4th floor through the window. . . I don't want to go
       back. . . It can turn to bad consequences.
-    characterFace: {fileID: -8957828013051510, guid: c6fab4566320ee76da28e0ce4a78a1ee, type: 3}
+    characterFace: {fileID: -8957828013051510, guid: 06264b6e6e2ca76ddaf8337631f2e5b0, type: 3}
