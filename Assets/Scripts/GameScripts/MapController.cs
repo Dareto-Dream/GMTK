@@ -9,12 +9,12 @@ public class MapController : MonoBehaviour
 
     public void Blacken()
     {
-        StartCoroutine(screenFader.FadeOut());
+        StartCoroutine(screenFader.FadeIn());
     }
 
     public void Unblacken()
     {
-        StartCoroutine(screenFader.FadeIn());
+        StartCoroutine(screenFader.FadeOut());
     }
 
     public void ChangeMap(int mapIndex)

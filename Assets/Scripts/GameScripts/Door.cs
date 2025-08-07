@@ -1,4 +1,7 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Door : MonoBehaviour, IInteractable
 {
@@ -11,14 +14,20 @@ public class Door : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        StartCoroutine(Interecting());
+    }
+
+    private IEnumerator Interecting()
+    {
         AudioHandler.Instance.PlaySFX(AudioHandler.Instance.doorOpen);
         mapController.Blacken();
+        yield return new WaitForSeconds(0.5f);
         col.GetComponent<PlayerController>().ChangePosition(playerPosition);
         mapController.ChangeMap(targetMapIndex);
         AudioHandler.Instance.PlaySFX(AudioHandler.Instance.doorClose);
     }
 
-    private void OnTriggerEnter2D (Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {

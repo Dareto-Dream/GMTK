@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ProblemSpawner problemSpawner;
     [SerializeField] private BarrierLogic barrierLogic;
     [SerializeField] private SealedDoorLogic sealedDoorLogic;
+    [SerializeField] private Animator anim;
 
     public static GameManager Instance { get; private set; }
 
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
     public void EndLoop()
     {
         AudioHandler.Instance.PlaySFX(AudioHandler.Instance.ability);
+        anim.SetBool("isKillSwitching", true);
         Debug.Log($"Loop {loopCount} ended!");
         if (loopCount == 6) return;
         StartNewLoop();

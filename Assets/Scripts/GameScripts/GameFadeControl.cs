@@ -2,7 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class ScreenFader : MonoBehaviour
+public class ScreenFader
+ : MonoBehaviour
 {
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 1f;
@@ -16,7 +17,7 @@ public class ScreenFader : MonoBehaviour
     /// <summary>
     /// Fade from transparent to black.
     /// </summary>
-    public IEnumerator FadeOut()
+    public IEnumerator FadeIn()
     {
         yield return Fade(0f, 1f);
     }
@@ -24,7 +25,7 @@ public class ScreenFader : MonoBehaviour
     /// <summary>
     /// Fade from black back to transparent.
     /// </summary>
-    public IEnumerator FadeIn()
+    public IEnumerator FadeOut()
     {
         yield return Fade(1f, 0f);
     }
