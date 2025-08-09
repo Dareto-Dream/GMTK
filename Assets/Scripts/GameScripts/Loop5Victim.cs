@@ -19,6 +19,9 @@ public class Loop5Victim : MonoBehaviour
     [SerializeField] GameObject endingPanel; // Panel to hold the ending text, optional
     [SerializeField] TextMeshProUGUI endingText;       // Assign a UI Text or TMP_Text
 
+    [SerializeField] GameObject screenFader;
+
+    private PlayerController player;
     private bool triggered = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,17 +32,22 @@ public class Loop5Victim : MonoBehaviour
             //Debug.Log("THIS IS SPARTA");
             triggered = true;
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            player = collision.GetComponent<PlayerController>();
             dialogueUI.StartDialogue(scriptLoop5, TheEnd);
         }
     }
 
     private void TheEnd()
     {
+        player.ChangeCurrentInput("UI");
+
         Debug.Log("THe end");
         choicePanel.SetActive(true);
-        extraPanel.SetActive(true);
+        screenFader.SetActive(false);
         shootButton.onClick.RemoveAllListeners();
         waitButton.onClick.RemoveAllListeners();
+
+        player.Freeze();
 
         shootButton.onClick.AddListener(HandleShoot);
         waitButton.onClick.AddListener(HandleWait);
@@ -70,6 +78,7 @@ public class Loop5Victim : MonoBehaviour
         }
         else
         {
+            Debug.Log("Fuck you");
             // If no button, just end instantly
             EndGame();
         }

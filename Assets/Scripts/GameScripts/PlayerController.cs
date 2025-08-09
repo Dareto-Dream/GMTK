@@ -44,6 +44,11 @@ public class PlayerController : MonoBehaviour
         characterAnimationLogic = GetComponent<CharacterAnimationLogic>();
     }
 
+    public void ChangeCurrentInput(string str)
+    {
+        playerInput.SwitchCurrentActionMap(str);
+    }
+
     public void LoopReset()
     {
         is_freezing = false;
@@ -56,7 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             dialogueUI.StartDialogue(scriptLoop4);
         }
-        
+
     }
 
     public void Freeze()

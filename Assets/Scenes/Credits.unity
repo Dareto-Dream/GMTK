@@ -335,6 +335,67 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1001 &1272923510
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1979872459622344267, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059156777928043780, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 712.3262
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059156777928043780, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1071.5552
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059156777928043780, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059156777928043780, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059156777928043780, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059156777928043780, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059156777928043780, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059156777928043780, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059156777928043780, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059156777928043780, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129261073349976975, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
+      propertyPath: mainTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: 49825a4318f041a41ad5f2d044dae479, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 25e3a31fe2f40d674a2d1e543aab3f94, type: 3}
 --- !u!1 &1880572755
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +509,7 @@ GameObject:
   - component: {fileID: 1962253810}
   - component: {fileID: 1962253812}
   - component: {fileID: 1962253811}
+  - component: {fileID: 1962253813}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -469,10 +531,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1880572759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 540}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1962253811
 MonoBehaviour:
@@ -494,26 +556,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Programming:
-
-    DeltaVortex (DeltaVDevs)
-
-    Master''s Time(DigItalitE)
-
-
-
-    Art:
-
-    Turtle
-    Dev
-
-    Incoder Ancoder
-
-
-
-    Sound & SFX;
-
-    BaTM!X'
+  m_text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKillSwitch
+    - Idea by DeltaVortex (DeltaVDevs).\n\n\n\n\nProgramming:\nDeltaVortex (DeltaVDevs)\nMaster's
+    Time (DigItalitE)\n\n\nArt:\nTurtle Dev\nIncoder Ancoder\nMaster's Time (DigItalitE)\n\nSound
+    & SFX;\nBaTM!X\n\n\nDespite the fact that this game is ended in development,
+    I will try to improve this game.\n\nAny questions? DM me in Discord: hacker_rank.
+    \n\nThank you for playing this game!\n\n\n\n\n\n(P.S. this game was made for
+    GMTK 2025, theme - LOOP.)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPress
+    ALT+F4 to exit this game, no \"Main menu\" stuff, I am too lazy to write that
+    script. Also, I hope you enjoyed the game!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -547,7 +598,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -592,6 +643,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962253809}
   m_CullTransparentMesh: 1
+--- !u!114 &1962253813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962253809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14bf051d125899ce0b9b6500a01a3b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 50
+  creditsPanel: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -599,3 +664,4 @@ SceneRoots:
   - {fileID: 721315178}
   - {fileID: 1880572759}
   - {fileID: 227653473}
+  - {fileID: 1272923510}
